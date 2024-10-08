@@ -9,6 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 
 
+
 func _ready():
 	print(get_class())
 	#Globals.enemy1 = self
