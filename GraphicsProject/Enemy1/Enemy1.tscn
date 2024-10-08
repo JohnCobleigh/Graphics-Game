@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5erd8awa252k"]
+
+[ext_resource type="Script" path="res://Enemy1/Enemy1.gd" id="1_ucrsi"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7npid"]
+size = Vector2(30, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxyk4"]
+size = Vector2(30, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgfqp"]
+size = Vector2(30, 125)
+
+[node name="Enemy1" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 0
+script = ExtResource("1_ucrsi")
+isControlled = null
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_7npid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wxyk4")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mgfqp")

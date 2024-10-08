@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://bx5443in28q7d"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_mh3w0"]
+[ext_resource type="Script" path="res://Scripts/Camera2D.gd" id="2_yfnag"]
+[ext_resource type="PackedScene" uid="uid://c5erd8awa252k" path="res://Enemy1/Enemy1.tscn" id="3_u8wyb"]
+[ext_resource type="PackedScene" uid="uid://cs5n2yaisceva" path="res://Player/Player.tscn" id="4_ybll2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg6ut"]
+size = Vector2(1202, 30)
+
+[sub_resource type="QuadMesh" id="QuadMesh_k1qt0"]
+size = Vector2(1202, 30)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_mh3w0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(587, 634)
+shape = SubResource("RectangleShape2D_gg6ut")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+position = Vector2(587, 634)
+mesh = SubResource("QuadMesh_k1qt0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 323)
+script = ExtResource("2_yfnag")
+
+[node name="Player" parent="." instance=ExtResource("4_ybll2")]
+position = Vector2(100, 461)
+
+[node name="Enemy1" parent="." instance=ExtResource("3_u8wyb")]
+position = Vector2(588, 526)

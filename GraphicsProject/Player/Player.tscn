@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cs5n2yaisceva"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_sb8h1"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_iwb5m"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cki1c"]
+size = Vector2(50, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dn6w"]
+size = Vector2(96.5, 77.5)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 0
+script = ExtResource("1_sb8h1")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_iwb5m")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_cki1c")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(75, 1)
+shape = SubResource("RectangleShape2D_4dn6w")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
