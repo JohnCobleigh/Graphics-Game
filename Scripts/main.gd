@@ -6,7 +6,8 @@ class_name Main
 
 
 func _ready():
-	pass
+	Globals.main = self
+	
 
 
 

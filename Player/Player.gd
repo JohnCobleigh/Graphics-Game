@@ -1,21 +1,25 @@
 extends CharacterBody2D
-
+class_name Player
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 @onready var playerCollision: CollisionShape2D = $PlayerCollision
-@onready var wisp: Player =  $Wisp
+@onready var wisp = $Wisp
+@onready var playerDetector: Area2D = $PlayerDetector
 
 # Variables for possession
 var enemyToSwitch: CharacterBody2D = null
 var isNearEnemy: bool = false
-var beControlled: Enemy1 = null  # Store the currently possessed enemy
-var isPlayerInvisible: bool = false  # Track when the player (wisp) is invisible
+var beControlled: Enemy1 = null
+var isPlayerInvisible: bool = false
+
+var lastDirection: Vector2 
 
 
 func _ready() -> void:
+	Globals.player = self
 	updateCollisionShape(wisp.wispCollision.shape)
 	
 	
@@ -38,24 +42,43 @@ func _physics_process(delta) -> void:
 	var direction = Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		lastDirection = Vector2(direction, 0)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()
+	rotateMesh()
+
+
+func rotateMesh() -> void:
+	if lastDirection.x < 0:
+		wisp.scale.x = -abs(wisp.scale.x)
+		playerDetector.scale.x = -abs(playerDetector.scale.x)
+	elif lastDirection.x > 0 :
+		wisp.scale.x = abs(wisp.scale.x)
+		playerDetector.scale.x = abs(playerDetector.scale.x)
+	
+		
 
 
 
 
-
-
-
-# Handle input for possession (replaces what was in the Wisp script)
 func _input(event: InputEvent) -> void:
+	#print(beControlled)
 	if Input.is_action_pressed("switch") and enemyToSwitch != null and isNearEnemy:
 		switchChar(enemyToSwitch)
+		enemyToSwitch = null
+		
+	
+	if Input.is_action_pressed("release") and isPlayerInvisible == true and beControlled != null:
+		#print(beControlled)
+		
+		releaseChar(beControlled)
 
 
 func switchChar(enemyToSwitch: CharacterBody2D) -> void:
+	if beControlled != null:
+		return
 	print("Switching to ", enemyToSwitch)
 
 	# Set the enemy as controlled by the Player
@@ -63,34 +86,43 @@ func switchChar(enemyToSwitch: CharacterBody2D) -> void:
 	print("Switched", enemyToSwitch)
 
 	# Remove the enemy from its current parent (Enemy1) and reparent it to the Player
-	var enemyParent = enemyToSwitch.get_parent()  # This will be Enemy1
-	enemyParent.remove_child(enemyToSwitch)  # Remove it from Enemy1
-	add_child(enemyToSwitch)  # Add it as a child of the Player
+	var enemyParent = enemyToSwitch.get_parent()
+	enemyParent.remove_child(enemyToSwitch)
+	add_child(enemyToSwitch)
+	beControlled = enemyToSwitch
 
-	# Set the Player as the new owner of the enemy
 	enemyToSwitch.set_owner(self)
-
-	# Make the wisp invisible
+	isPlayerInvisible = true
 	wisp.visible = false
 
-	# Update the Player's collision to match the enemy's collision shape
 	var enemyCollisionShape: Shape2D = enemyToSwitch.get_node("CollisionShape2D").shape
 	enemyToSwitch.set_collision_layer_value(1, false)
 	updateCollisionShape(enemyCollisionShape)
 
-	# Reset the enemy's position relative to the Player
 	enemyToSwitch.global_position = global_position
 
 
-
-func releaseChar(event: InputEvent):
+func releaseChar(enemyToRelease: CharacterBody2D):
 	if Input.is_action_pressed("release"):
-		pass
+		
+		print(enemyToRelease)
+		
+		enemyToRelease.reparent(Globals.main)
+		
+		wisp.visible = true
+		isPlayerInvisible = false
+		beControlled = null
+		updateCollisionShape(wisp.wispCollision.shape)
+		
+		#remove_child(enemyToRelease)
+		
+		
+		
 
 # Area2D detection for nearby enemies
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Enemy"):
-		print("Enemy entered: ", area)
+		print("Enemy entered: ", area.get_parent())
 		isNearEnemy = true
 		enemyToSwitch = area.get_parent() as CharacterBody2D  # Get the enemy's parent node
 

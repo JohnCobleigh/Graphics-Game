@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name Player
+#class_name Wisp
 
 
 #const SPEED = 300.0

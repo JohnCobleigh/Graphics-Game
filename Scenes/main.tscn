@@ -27,16 +27,6 @@ shape = SubResource("RectangleShape2D_gg6ut")
 position = Vector2(587, 634)
 mesh = SubResource("QuadMesh_k1qt0")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(576, 323)
-script = ExtResource("2_yfnag")
-
-[node name="Enemy1" parent="." instance=ExtResource("3_u8wyb")]
-position = Vector2(588, 526)
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("4_qyj1s")]
-position = Vector2(188, 570)
-
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(77, 555)
 
@@ -49,6 +39,16 @@ position = Vector2(77, 555)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
 position = Vector2(137, -134)
 shape = SubResource("RectangleShape2D_mqpog")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 323)
+script = ExtResource("2_yfnag")
+
+[node name="Player" parent="." instance=ExtResource("4_qyj1s")]
+position = Vector2(223, 546)
+
+[node name="Enemy1" parent="." instance=ExtResource("3_u8wyb")]
+position = Vector2(588, 526)
 
 [node name="Enemy2" parent="." instance=ExtResource("3_u8wyb")]
 position = Vector2(633, 532)
