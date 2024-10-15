@@ -1,9 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://st5jytjihoea"]
+[gd_scene load_steps=16 format=3 uid="uid://st5jytjihoea"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_tjj31"]
 [ext_resource type="Script" path="res://Player/Wisp.gd" id="2_7fluc"]
+[ext_resource type="Script" path="res://States/PlayerStates/idle.gd" id="3_8odsl"]
+[ext_resource type="Script" path="res://States/PlayerStates/walk.gd" id="4_wry0n"]
+[ext_resource type="Script" path="res://States/PlayerStates/run.gd" id="5_domcg"]
+[ext_resource type="Script" path="res://States/PlayerStates/dash.gd" id="6_av2ny"]
+[ext_resource type="Script" path="res://States/PlayerStates/attack.gd" id="7_4x183"]
+[ext_resource type="PackedScene" uid="uid://ckurjd6v8yrc4" path="res://Components/HealthComponent/healthComponent.tscn" id="8_f0rcp"]
+[ext_resource type="PackedScene" uid="uid://bvt1whru306yl" path="res://Components/HitboxComponent/hitboxComponent.tscn" id="9_qao3k"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqpj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf0mh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwnoo"]
 size = Vector2(117, 83)
@@ -16,17 +23,23 @@ size = Vector2(25, 58)
 
 [sub_resource type="QuadMesh" id="QuadMesh_ylmuh"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqpj"]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_tjj31")
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_pxqpj")
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_kf0mh")
 
 [node name="PlayerDetector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
 position = Vector2(76.5, 3.5)
 shape = SubResource("RectangleShape2D_rwnoo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
 
 [node name="Wisp" type="CharacterBody2D" parent="."]
 collision_layer = 0
@@ -44,6 +57,36 @@ modulate = Color(0.00184107, 0.00184107, 0.00184107, 1)
 position = Vector2(10, -17)
 scale = Vector2(2, 20)
 mesh = SubResource("QuadMesh_ylmuh")
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_8odsl")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = ExtResource("4_wry0n")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("5_domcg")
+
+[node name="Dash" type="Node" parent="StateMachine"]
+script = ExtResource("6_av2ny")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("7_4x183")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="HealthComponent" parent="Components" instance=ExtResource("8_f0rcp")]
+unique_name_in_owner = true
+
+[node name="HitboxComponent" parent="Components" node_paths=PackedStringArray("healthComponent", "collisionShape") instance=ExtResource("9_qao3k")]
+unique_name_in_owner = true
+healthComponent = NodePath("../HealthComponent")
+collisionShape = NodePath("PlayerCollision")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="Components/HitboxComponent"]
+shape = SubResource("RectangleShape2D_pxqpj")
 
 [connection signal="area_entered" from="PlayerDetector" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="PlayerDetector" to="." method="_on_area_2d_area_exited"]

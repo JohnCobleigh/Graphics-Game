@@ -24,3 +24,13 @@ shape = SubResource("RectangleShape2D_wxyk4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_mgfqp")
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="StateMachine"]
+
+[node name="Wander" type="Node" parent="StateMachine"]
+
+[node name="Guard" type="Node" parent="StateMachine"]
+
+[node name="Attack" type="Node" parent="StateMachine"]

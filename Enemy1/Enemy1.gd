@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 #const isControllable: bool = true
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var isDead = false
 
 
 
@@ -16,8 +17,6 @@ func _ready():
 	isControlled = false
 
 
-func isEnemy():
-	return true
 
 #func _physics_process(delta):
 	#if isControlled == false:
@@ -41,3 +40,7 @@ func isEnemy():
 		#velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	#move_and_slide()
+
+
+func ai() -> void:
+	pass
