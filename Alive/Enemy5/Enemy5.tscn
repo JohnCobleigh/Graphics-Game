@@ -1,0 +1,528 @@
+[gd_scene load_steps=115 format=3 uid="uid://dgw4re4wcc0pb"]
+
+[ext_resource type="Script" path="res://Alive/Enemy5/Enemy5.gd" id="1_mq73h"]
+[ext_resource type="Texture2D" uid="uid://d0ouinagelx5v" path="res://Assets/Character Assets/Wizard/wizard base.png" id="2_03qjt"]
+[ext_resource type="Texture2D" uid="uid://bqvnyn2rbpi6r" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0000.png" id="2_lbx5i"]
+[ext_resource type="Texture2D" uid="uid://c1c6gb7uixpo5" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0001.png" id="3_d2qj3"]
+[ext_resource type="Texture2D" uid="uid://bqq46ctgg2jmv" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0002.png" id="4_m4hc4"]
+[ext_resource type="Texture2D" uid="uid://cocp3myfhig7v" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0003.png" id="5_j7v2w"]
+[ext_resource type="Texture2D" uid="uid://chdj8asts6fcp" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0004.png" id="6_8hr3m"]
+[ext_resource type="Texture2D" uid="uid://cfjjpd6sd8k7j" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0005.png" id="7_g50kx"]
+[ext_resource type="Texture2D" uid="uid://3602if1ran3g" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0006.png" id="8_5mv5n"]
+[ext_resource type="Texture2D" uid="uid://dbfrygiqty6qy" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0007.png" id="9_vornl"]
+[ext_resource type="Texture2D" uid="uid://b2w5ojeimjg7l" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0008.png" id="10_qc3ju"]
+[ext_resource type="Texture2D" uid="uid://bkpvmdh7je4yn" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0009.png" id="11_viehs"]
+[ext_resource type="Texture2D" uid="uid://cavms41codh7p" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0010.png" id="12_4e7nu"]
+[ext_resource type="Texture2D" uid="uid://byoc3vgtvyfkj" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0011.png" id="13_jg1bf"]
+[ext_resource type="Texture2D" uid="uid://b1n1qlht7qq5n" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0012.png" id="14_1dhwa"]
+[ext_resource type="Texture2D" uid="uid://buv8bd45hnwdg" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0013.png" id="15_yn1f6"]
+[ext_resource type="Texture2D" uid="uid://c0jfncx0n4i25" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0014.png" id="16_3pdtx"]
+[ext_resource type="Texture2D" uid="uid://b6owf16o4jyhq" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0015.png" id="17_g6gn0"]
+[ext_resource type="Texture2D" uid="uid://bkmco2vg60arm" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0016.png" id="18_08hln"]
+[ext_resource type="Texture2D" uid="uid://dtw38r6aglu8p" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0017.png" id="19_p7klk"]
+[ext_resource type="Texture2D" uid="uid://c3wwvkdwvf1gd" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0018.png" id="20_16fe6"]
+[ext_resource type="Texture2D" uid="uid://ewstgpw7s7eb" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0019.png" id="21_anyix"]
+[ext_resource type="Texture2D" uid="uid://dxll5b06u6hgf" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0020.png" id="22_0mct0"]
+[ext_resource type="Texture2D" uid="uid://2in8fi4881kq" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0021.png" id="23_hct2d"]
+[ext_resource type="Texture2D" uid="uid://cpwnfb2f0he60" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0022.png" id="24_dimvi"]
+[ext_resource type="Texture2D" uid="uid://hnlkymcb8ldm" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0023.png" id="25_u5p77"]
+[ext_resource type="Texture2D" uid="uid://bes4hgh1txone" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0024.png" id="26_ma1ml"]
+[ext_resource type="Texture2D" uid="uid://ivynpurjwlti" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0025.png" id="27_nef1d"]
+[ext_resource type="Texture2D" uid="uid://duh1y33ooryhm" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0026.png" id="28_f2sl1"]
+[ext_resource type="Texture2D" uid="uid://cpbp05fq2qbsl" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0027.png" id="29_82ek0"]
+[ext_resource type="Texture2D" uid="uid://bel4th7ddtrxl" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0028.png" id="30_2h6p3"]
+[ext_resource type="Texture2D" uid="uid://ln785vhogw62" path="res://Assets/Character Assets/Wizard/Fire Attack/frame0029.png" id="31_kypgj"]
+[ext_resource type="Texture2D" uid="uid://c4si3roayhere" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0000.png" id="33_vlf50"]
+[ext_resource type="Texture2D" uid="uid://ig5bfx6re2wc" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0001.png" id="34_bxi1m"]
+[ext_resource type="Texture2D" uid="uid://c4v067328ssrk" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0002.png" id="35_l3svh"]
+[ext_resource type="Texture2D" uid="uid://c8mfuhgaeetec" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0003.png" id="36_1dni4"]
+[ext_resource type="Texture2D" uid="uid://l7gska2iny7x" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0004.png" id="37_3vluw"]
+[ext_resource type="Texture2D" uid="uid://3ou0qpp3fpra" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0005.png" id="38_tqvt3"]
+[ext_resource type="Texture2D" uid="uid://cgwendf3c38og" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0006.png" id="39_uq00i"]
+[ext_resource type="Texture2D" uid="uid://bvbrum1oi3krr" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0007.png" id="40_dt0fc"]
+[ext_resource type="Texture2D" uid="uid://cbunis8dfl7f5" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0008.png" id="41_kpyg1"]
+[ext_resource type="Texture2D" uid="uid://b45b3c06r228k" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0009.png" id="42_264xe"]
+[ext_resource type="Texture2D" uid="uid://b4ipvjyt66iea" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0010.png" id="43_jhvlb"]
+[ext_resource type="Texture2D" uid="uid://cpcun7reou5b3" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0011.png" id="44_lrywn"]
+[ext_resource type="Texture2D" uid="uid://c2504gn4sfuu6" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0012.png" id="45_3taoa"]
+[ext_resource type="Texture2D" uid="uid://e0drw1tx0aej" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0013.png" id="46_brwm8"]
+[ext_resource type="Texture2D" uid="uid://ddisfigd5vk40" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0014.png" id="47_pxl88"]
+[ext_resource type="Texture2D" uid="uid://cav8eodxnajh3" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0015.png" id="48_kbqg1"]
+[ext_resource type="Script" path="res://Scripts/States/stateMachine.gd" id="49_fshlr"]
+[ext_resource type="Texture2D" uid="uid://c1j5orqec7l3e" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0016.png" id="49_l557o"]
+[ext_resource type="Texture2D" uid="uid://cjki562qilbus" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0017.png" id="50_jkwxv"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy5/idle5.gd" id="50_uw5om"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy5/wander5.gd" id="51_pm3v6"]
+[ext_resource type="Texture2D" uid="uid://cekpx4e7wirq1" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0018.png" id="51_rc63x"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy5/guard5.gd" id="52_p2hsa"]
+[ext_resource type="Texture2D" uid="uid://cg1ar7rkwgc17" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0019.png" id="52_r4ke0"]
+[ext_resource type="Texture2D" uid="uid://ddbypj5fxsny6" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0020.png" id="53_3p6v7"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy5/attack5.gd" id="53_ax0in"]
+[ext_resource type="Texture2D" uid="uid://bk6l08caybb8l" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0021.png" id="54_8h182"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy5/isControlled5.gd" id="54_xjtmd"]
+[ext_resource type="Texture2D" uid="uid://d372iuvm3rpdj" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0022.png" id="55_d3qpt"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy5/isDead5.gd" id="55_qipuj"]
+[ext_resource type="Texture2D" uid="uid://chmqjob3vx886" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0023.png" id="56_37hdn"]
+[ext_resource type="PackedScene" uid="uid://ckurjd6v8yrc4" path="res://Components/HealthComponent/healthComponent.tscn" id="56_42qs7"]
+[ext_resource type="Texture2D" uid="uid://dyfuc5jg6q86" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0024.png" id="57_faohu"]
+[ext_resource type="PackedScene" uid="uid://bvt1whru306yl" path="res://Components/HitboxComponent/hitboxComponent.tscn" id="57_fptdq"]
+[ext_resource type="Texture2D" uid="uid://drshuxvavcfp6" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0025.png" id="58_x083w"]
+[ext_resource type="Texture2D" uid="uid://8cbp2fhfkp7a" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0026.png" id="59_yf3me"]
+[ext_resource type="Texture2D" uid="uid://bsgbq0hg5trt0" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0027.png" id="60_u4r3b"]
+[ext_resource type="Texture2D" uid="uid://eg7638mchcp" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0028.png" id="61_y4nrn"]
+[ext_resource type="Texture2D" uid="uid://djdbpw1q8qcvb" path="res://Assets/Character Assets/Wizard/Lightning Attack/frame0029.png" id="62_erl7l"]
+[ext_resource type="Texture2D" uid="uid://dkqv8fj7sq6u7" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0000.png" id="63_b8xq6"]
+[ext_resource type="Texture2D" uid="uid://buxu58yoy6rv3" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0001.png" id="64_esfyv"]
+[ext_resource type="Texture2D" uid="uid://cdv7opqvvepqg" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0002.png" id="65_a57uf"]
+[ext_resource type="Texture2D" uid="uid://bbbanyc4r80p4" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0003.png" id="66_wgem1"]
+[ext_resource type="Texture2D" uid="uid://ce7038jppppyj" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0004.png" id="67_cm3s3"]
+[ext_resource type="Texture2D" uid="uid://dgb2do0xauwdt" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0005.png" id="68_2hxlq"]
+[ext_resource type="Texture2D" uid="uid://cnxu71y81jpof" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0006.png" id="69_1j6nf"]
+[ext_resource type="Texture2D" uid="uid://dlkfl4pvc5gxc" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0007.png" id="70_gdi6e"]
+[ext_resource type="Texture2D" uid="uid://t2we0p3bposc" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0008.png" id="71_8hh3j"]
+[ext_resource type="Texture2D" uid="uid://ct2y2lbudku4y" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0009.png" id="72_o4wvv"]
+[ext_resource type="Texture2D" uid="uid://b5uulvy81bunr" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0010.png" id="73_vhygo"]
+[ext_resource type="Texture2D" uid="uid://bgf0j3yrofgyo" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0011.png" id="74_blvbl"]
+[ext_resource type="Texture2D" uid="uid://tpwxbipkhuuc" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0012.png" id="75_skapn"]
+[ext_resource type="Texture2D" uid="uid://diluj5g4blbuv" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0013.png" id="76_ii6iu"]
+[ext_resource type="Texture2D" uid="uid://iivoh66fmqui" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0014.png" id="77_8fbg3"]
+[ext_resource type="Texture2D" uid="uid://78j34d0su06j" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0015.png" id="78_v4hqw"]
+[ext_resource type="Texture2D" uid="uid://h6ffp27lm4oq" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0016.png" id="79_fumov"]
+[ext_resource type="Texture2D" uid="uid://c1gjkh7f57de7" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0017.png" id="80_mjvj3"]
+[ext_resource type="Texture2D" uid="uid://cq86blytvewrw" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0018.png" id="81_noucd"]
+[ext_resource type="Texture2D" uid="uid://baegsym5b88c" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0019.png" id="82_pnwnk"]
+[ext_resource type="Texture2D" uid="uid://8dochd6ckc3" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0020.png" id="83_254sb"]
+[ext_resource type="Texture2D" uid="uid://bxofp7ho5yebv" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0021.png" id="84_w12ll"]
+[ext_resource type="Texture2D" uid="uid://b3sudxetu1dgh" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0022.png" id="85_bx2h1"]
+[ext_resource type="Texture2D" uid="uid://b4mbcy7tbpb0b" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0023.png" id="86_i4f7p"]
+[ext_resource type="Texture2D" uid="uid://bvmtw6m6tm0b5" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0024.png" id="87_uff5h"]
+[ext_resource type="Texture2D" uid="uid://bb25hnj1x5mxp" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0025.png" id="88_uto08"]
+[ext_resource type="Texture2D" uid="uid://df0swq5daj4vf" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0026.png" id="89_0lqro"]
+[ext_resource type="Texture2D" uid="uid://dxyqmr6bbolhc" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0027.png" id="90_bvae4"]
+[ext_resource type="Texture2D" uid="uid://c3oknpucqrgm7" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0028.png" id="91_rkxin"]
+[ext_resource type="Texture2D" uid="uid://bbsrmkgjo6svp" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0029.png" id="92_ih8yw"]
+[ext_resource type="Texture2D" uid="uid://cokslns3mttwc" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0030.png" id="93_ryip4"]
+[ext_resource type="Texture2D" uid="uid://cbqwmus0b66fd" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0031.png" id="94_lx8oo"]
+[ext_resource type="Texture2D" uid="uid://cbaos1wv8rfip" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0032.png" id="95_xcmtf"]
+[ext_resource type="Texture2D" uid="uid://b7cumx66cen4a" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0033.png" id="96_pnx3g"]
+[ext_resource type="Texture2D" uid="uid://b3n5yhcmiukw1" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0034.png" id="97_6f3bu"]
+[ext_resource type="Texture2D" uid="uid://w07vuxfophfn" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0035.png" id="98_esgwr"]
+[ext_resource type="Texture2D" uid="uid://dxb3f4kful26k" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0036.png" id="99_uexo1"]
+[ext_resource type="Texture2D" uid="uid://b0pr03mg11jce" path="res://Assets/Character Assets/Wizard/Sword Attack/frame0037.png" id="100_fjob6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xoq8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lbx5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d2qj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m4hc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j7v2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8hr3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_g50kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5mv5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vornl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qc3ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_viehs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4e7nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jg1bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_1dhwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yn1f6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3pdtx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_g6gn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_08hln")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_p7klk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_16fe6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_anyix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_0mct0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_hct2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_dimvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_u5p77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ma1ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_nef1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_f2sl1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_82ek0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_2h6p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_kypgj")
+}],
+"loop": true,
+"name": &"Fire Attack",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_03qjt")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33_vlf50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_bxi1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_l3svh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_1dni4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_3vluw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_tqvt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_uq00i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_dt0fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_kpyg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_264xe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_jhvlb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_lrywn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_3taoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_brwm8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_pxl88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_kbqg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_l557o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_jkwxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_rc63x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_r4ke0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_3p6v7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_8h182")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_d3qpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_37hdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_faohu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_x083w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_yf3me")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_u4r3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_y4nrn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_erl7l")
+}],
+"loop": true,
+"name": &"Lightning Attack",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_b8xq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_esfyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_a57uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_wgem1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_cm3s3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_2hxlq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_1j6nf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_gdi6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_8hh3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_o4wvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_vhygo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_blvbl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_skapn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_ii6iu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_8fbg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_v4hqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_fumov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_mjvj3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_noucd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_pnwnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_254sb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_w12ll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_bx2h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_i4f7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_uff5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_uto08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_0lqro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_bvae4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_rkxin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_ih8yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_ryip4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_lx8oo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_xcmtf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_pnx3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_6f3bu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_esgwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_uexo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_fjob6")
+}],
+"loop": true,
+"name": &"Sword Attack",
+"speed": 37.0
+}]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7npid"]
+size = Vector2(30, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxyk4"]
+size = Vector2(92.2916, 98.8214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7swdn"]
+size = Vector2(1063.15, 406.455)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm52l"]
+size = Vector2(92.5637, 99.1068)
+
+[node name="Enemy5" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_mq73h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(8.51029, 23.3532)
+scale = Vector2(0.213764, 0.184744)
+sprite_frames = SubResource("SpriteFrames_xoq8k")
+animation = &"Lightning Attack"
+flip_h = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(7.5, 14.5)
+scale = Vector2(4.1, 0.472)
+mesh = SubResource("QuadMesh_7npid")
+
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(7.25, 12)
+shape = SubResource("RectangleShape2D_wxyk4")
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 130
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+position = Vector2(216.405, -35.1407)
+shape = SubResource("RectangleShape2D_7swdn")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("enemy", "initialState")]
+unique_name_in_owner = true
+script = ExtResource("49_fshlr")
+enemy = NodePath("..")
+initialState = NodePath("Wander")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("50_uw5om")
+enemy = NodePath("../..")
+
+[node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("51_pm3v6")
+enemy = NodePath("../..")
+
+[node name="Guard" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("52_p2hsa")
+enemy = NodePath("../..")
+
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("53_ax0in")
+enemy = NodePath("../..")
+
+[node name="IsControlled" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("54_xjtmd")
+enemy = NodePath("../..")
+
+[node name="IsDead" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("55_qipuj")
+enemy = NodePath("../..")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="HealthComponent" parent="Components" node_paths=PackedStringArray("character", "stateMachine") instance=ExtResource("56_42qs7")]
+unique_name_in_owner = true
+character = NodePath("../..")
+maxHealth = 100.0
+stateMachine = NodePath("../../StateMachine")
+
+[node name="HitboxComponent" parent="Components" node_paths=PackedStringArray("person", "healthComponent", "collisionShape") groups=["Enemy"] instance=ExtResource("57_fptdq")]
+collision_layer = 296
+collision_mask = 518
+person = NodePath("../..")
+healthComponent = NodePath("../HealthComponent")
+collisionShape = NodePath("CharacterCollision")
+
+[node name="CharacterCollision" type="CollisionShape2D" parent="Components/HitboxComponent"]
+position = Vector2(7.33585, 12.0257)
+shape = SubResource("RectangleShape2D_lm52l")
+
+[connection signal="area_entered" from="EnemyDetector" to="." method="_on_enemy_detector_area_entered"]
+[connection signal="area_exited" from="EnemyDetector" to="." method="_on_enemy_detector_area_exited"]

@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://st5jytjihoea"]
+
+[ext_resource type="Script" path="res://Alive/Player/Player.gd" id="1_tjj31"]
+[ext_resource type="Script" path="res://Alive/Player/Wisp.gd" id="2_7fluc"]
+[ext_resource type="Texture2D" uid="uid://iii7vs5kxp1r" path="res://Assets/Character Assets/Wisp/soul2.png" id="3_btegy"]
+[ext_resource type="PackedScene" uid="uid://ckurjd6v8yrc4" path="res://Components/HealthComponent/healthComponent.tscn" id="8_f0rcp"]
+[ext_resource type="PackedScene" uid="uid://bvt1whru306yl" path="res://Components/HitboxComponent/hitboxComponent.tscn" id="9_qao3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf0mh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwnoo"]
+size = Vector2(117, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xj26p"]
+size = Vector2(32, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqpj"]
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 66
+collision_mask = 5
+script = ExtResource("1_tjj31")
+
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_kf0mh")
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(76.5, 3.5)
+shape = SubResource("RectangleShape2D_rwnoo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -50)
+zoom = Vector2(0.7, 0.7)
+
+[node name="Wisp" type="CharacterBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_7fluc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wisp"]
+position = Vector2(-1, -2)
+scale = Vector2(0.0640301, 0.0639535)
+texture = ExtResource("3_btegy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wisp"]
+shape = SubResource("RectangleShape2D_xj26p")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="HealthComponent" parent="Components" node_paths=PackedStringArray("character") instance=ExtResource("8_f0rcp")]
+unique_name_in_owner = true
+character = NodePath("../..")
+maxHealth = 100.0
+
+[node name="HitboxComponent" parent="Components" node_paths=PackedStringArray("person", "healthComponent", "collisionShape") instance=ExtResource("9_qao3k")]
+unique_name_in_owner = true
+collision_layer = 200
+collision_mask = 4
+person = NodePath("../..")
+healthComponent = NodePath("../HealthComponent")
+collisionShape = NodePath("PlayerCollision")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="Components/HitboxComponent"]
+shape = SubResource("RectangleShape2D_pxqpj")
+
+[connection signal="area_entered" from="PlayerDetector" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="PlayerDetector" to="." method="_on_area_2d_area_exited"]

@@ -1,0 +1,88 @@
+[gd_scene load_steps=18 format=3 uid="uid://dhowxcmfgmkwf"]
+
+[ext_resource type="Script" path="res://Combined/Lever/caveLeverSwitch.gd" id="1_dfdfx"]
+[ext_resource type="Texture2D" uid="uid://cfmauqhc5wdhg" path="res://Assets/Other/Lever Pull/frame0000.png" id="2_ge5l1"]
+[ext_resource type="Texture2D" uid="uid://dftniu0xbl2wt" path="res://Assets/Other/Lever Pull/frame0001.png" id="3_dw33j"]
+[ext_resource type="Texture2D" uid="uid://3s6285jyqv2a" path="res://Assets/Other/Lever Pull/frame0002.png" id="4_jmvhf"]
+[ext_resource type="Texture2D" uid="uid://ckw1badqy4b11" path="res://Assets/Other/Lever Pull/frame0003.png" id="5_on7yg"]
+[ext_resource type="Texture2D" uid="uid://bvcwpy3oh7gfj" path="res://Assets/Other/Lever Pull/frame0004.png" id="6_8nxdr"]
+[ext_resource type="Texture2D" uid="uid://cpf7xe8ki4fuu" path="res://Assets/Other/Lever Pull/frame0005.png" id="7_hby6x"]
+[ext_resource type="Texture2D" uid="uid://dwawnshb72yvx" path="res://Assets/Other/Lever Pull/frame0006.png" id="8_gb5so"]
+[ext_resource type="Texture2D" uid="uid://b40xj37eddlp" path="res://Assets/Other/Lever Pull/frame0007.png" id="9_scohs"]
+[ext_resource type="Texture2D" uid="uid://co4nsbqo4y5wn" path="res://Assets/Other/Lever Pull/frame0008.png" id="10_peb1t"]
+[ext_resource type="Texture2D" uid="uid://ce58kcyifrec2" path="res://Assets/Other/Lever Pull/frame0009.png" id="11_ctg30"]
+[ext_resource type="Texture2D" uid="uid://c52v3l2bqroyl" path="res://Assets/Other/Lever Pull/frame0010.png" id="12_exhoo"]
+[ext_resource type="Texture2D" uid="uid://nfoydlrogu1l" path="res://Assets/Other/Lever Pull/frame0011.png" id="13_fm7ur"]
+[ext_resource type="Texture2D" uid="uid://dq56l8gc0bm14" path="res://Assets/Other/Lever Pull/frame0012.png" id="14_3edte"]
+[ext_resource type="Texture2D" uid="uid://dg6sd13a4kpwa" path="res://Assets/Other/Lever Pull/frame0013.png" id="15_fhxg6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxcuw"]
+size = Vector2(31.748, 29.6049)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qkicf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ge5l1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_dw33j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jmvhf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_on7yg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8nxdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hby6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gb5so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_scohs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_peb1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ctg30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_exhoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fm7ur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3edte")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_fhxg6")
+}],
+"loop": false,
+"name": &"Lever Pull",
+"speed": 18.0
+}]
+
+[node name="Lever" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.63509, -0.259325)
+shape = SubResource("RectangleShape2D_qxcuw")
+script = ExtResource("1_dfdfx")
+
+[node name="leverPull" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1.55327, -3.56763)
+scale = Vector2(0.126297, 0.126297)
+sprite_frames = SubResource("SpriteFrames_qkicf")
+animation = &"Lever Pull"
+
+[connection signal="area_entered" from="." to="CollisionShape2D" method="_on_area_2d_area_entered"]

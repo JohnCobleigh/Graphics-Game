@@ -1,0 +1,109 @@
+[gd_scene load_steps=20 format=3 uid="uid://18bjvs6lyp0f"]
+
+[ext_resource type="Script" path="res://Alive/Enemy5/swordSwing.gd" id="1_dbxic"]
+[ext_resource type="Texture2D" uid="uid://d1yirm0grotvm" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0000.png" id="1_q7ftt"]
+[ext_resource type="Texture2D" uid="uid://cqgi0uu7hyeuy" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0001.png" id="2_4l5ba"]
+[ext_resource type="Texture2D" uid="uid://ct50yk7n0a56u" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0002.png" id="3_fnf1n"]
+[ext_resource type="Texture2D" uid="uid://i8bcojwqtxf5" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0003.png" id="4_3yxgr"]
+[ext_resource type="Texture2D" uid="uid://buviwpgvc7fib" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0004.png" id="5_6th3o"]
+[ext_resource type="Texture2D" uid="uid://dcipo3a4qsein" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0005.png" id="6_8n5jo"]
+[ext_resource type="Texture2D" uid="uid://yvsbx4883dep" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0006.png" id="7_dfor5"]
+[ext_resource type="Texture2D" uid="uid://bmnn0rfimyrnx" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0007.png" id="8_wl6wa"]
+[ext_resource type="Texture2D" uid="uid://b30xd2l6nrolk" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0008.png" id="9_ra1h1"]
+[ext_resource type="Texture2D" uid="uid://cfnyymfih83cc" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0009.png" id="10_xtal5"]
+[ext_resource type="Texture2D" uid="uid://2lag4502xrwi" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0010.png" id="11_weh53"]
+[ext_resource type="Texture2D" uid="uid://cady8p2ldoy0s" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0011.png" id="12_7epa1"]
+[ext_resource type="Texture2D" uid="uid://bj2ld8sbre478" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0012.png" id="13_tkyfl"]
+[ext_resource type="Texture2D" uid="uid://cnwdubeu11cbl" path="res://Assets/Character Assets/Wizard/Sword Swing/frame0013.png" id="14_lqcl6"]
+[ext_resource type="Script" path="res://Components/HitboxComponent/hitboxComponent.gd" id="15_gdfco"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_spdtw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q7ftt")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_q7ftt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4l5ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fnf1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3yxgr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6th3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8n5jo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dfor5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wl6wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ra1h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_xtal5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_weh53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7epa1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_tkyfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lqcl6")
+}],
+"loop": false,
+"name": &"Sword Swing",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a18ij"]
+size = Vector2(135.818, 291.562)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g7s3"]
+size = Vector2(136.94, 290.559)
+
+[node name="SwordSwing" type="Area2D"]
+collision_mask = 129
+script = ExtResource("1_dbxic")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-24.5541, 0.463173)
+scale = Vector2(0.336768, 0.407126)
+sprite_frames = SubResource("SpriteFrames_spdtw")
+animation = &"Sword Swing"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-20.4207, 26.5909)
+shape = SubResource("RectangleShape2D_a18ij")
+
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("collisionShape")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("15_gdfco")
+collisionShape = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(-20.9819, 26.5315)
+shape = SubResource("RectangleShape2D_1g7s3")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

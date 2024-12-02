@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb46yys6rneuk"]
+
+[ext_resource type="Script" path="res://Combined/Double Jump/doubleJumpMedallion.gd" id="1_wn0u2"]
+[ext_resource type="Texture2D" uid="uid://dkxm18pfi2v2w" path="res://Assets/Other/double jump medal.png" id="2_u4o3d"]
+[ext_resource type="Script" path="res://Components/HitboxComponent/hitboxComponent.gd" id="2_uo7uu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f40sc"]
+size = Vector2(215.51, 272.193)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8x1e"]
+size = Vector2(211.943, 268.625)
+
+[node name="DoubleJumpMedallion" type="Area2D"]
+collision_mask = 129
+script = ExtResource("1_wn0u2")
+
+[node name="DoubleJumpMedal" type="Sprite2D" parent="."]
+position = Vector2(0.0599513, 4.64128)
+scale = Vector2(0.29561, 0.327871)
+texture = ExtResource("2_u4o3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f40sc")
+
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("collisionShape")]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("2_uo7uu")
+collisionShape = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("RectangleShape2D_b8x1e")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

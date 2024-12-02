@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cthi10pnge25d"]
+
+[ext_resource type="Script" path="res://Combined/Heart 2/heart2.gd" id="1_rao34"]
+[ext_resource type="Script" path="res://Components/HitboxComponent/hitboxComponent.gd" id="1_w2j14"]
+[ext_resource type="Texture2D" uid="uid://cemu4fddyounh" path="res://Assets/Other/heart2.png" id="2_oi7sf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fc70"]
+size = Vector2(59.6527, 56.34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_su3xu"]
+size = Vector2(59.6565, 56.6373)
+
+[node name="Area2D" type="Area2D"]
+collision_mask = 129
+script = ExtResource("1_rao34")
+
+[node name="Heart2" type="Sprite2D" parent="."]
+position = Vector2(3.05255, 2.47314)
+scale = Vector2(0.113317, 0.113317)
+texture = ExtResource("2_oi7sf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.111382, 6.22672)
+shape = SubResource("RectangleShape2D_8fc70")
+
+[node name="HitboxComponent" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("1_w2j14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(-0.0613098, 6.20074)
+shape = SubResource("RectangleShape2D_su3xu")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

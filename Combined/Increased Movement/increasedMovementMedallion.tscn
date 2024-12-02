@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4x5o3x54lrg4"]
+
+[ext_resource type="Script" path="res://Combined/Increased Movement/increasedMovementMedallion.gd" id="1_om1xh"]
+[ext_resource type="Texture2D" uid="uid://x8c6jwu6op7g" path="res://Assets/Other/double movement medal.png" id="2_7uq4a"]
+[ext_resource type="Script" path="res://Components/HitboxComponent/hitboxComponent.gd" id="2_k3irl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmiuh"]
+size = Vector2(194.614, 272.312)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_42l8e"]
+size = Vector2(189.424, 269.643)
+
+[node name="IncreasedMovementMedallion" type="Area2D"]
+collision_mask = 129
+script = ExtResource("1_om1xh")
+
+[node name="DoubleMovementMedal" type="Sprite2D" parent="."]
+position = Vector2(2.03046, 26.1218)
+scale = Vector2(0.292779, 0.28789)
+texture = ExtResource("2_7uq4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.18951, 5.0397)
+shape = SubResource("RectangleShape2D_vmiuh")
+
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("collisionShape")]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("2_k3irl")
+collisionShape = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(9.44943, 5.03967)
+shape = SubResource("RectangleShape2D_42l8e")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

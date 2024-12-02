@@ -1,0 +1,153 @@
+[gd_scene load_steps=16 format=3 uid="uid://st5jytjihoea"]
+
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_tjj31"]
+[ext_resource type="Script" path="res://Player/Wisp.gd" id="2_7fluc"]
+[ext_resource type="PackedScene" uid="uid://ckurjd6v8yrc4" path="res://Components/HealthComponent/healthComponent.tscn" id="8_f0rcp"]
+[ext_resource type="PackedScene" uid="uid://bvt1whru306yl" path="res://Components/HitboxComponent/hitboxComponent.tscn" id="9_qao3k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf0mh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwnoo"]
+size = Vector2(117, 83)
+
+[sub_resource type="QuadMesh" id="QuadMesh_7edqs"]
+size = Vector2(25, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xj26p"]
+size = Vector2(25, 58)
+
+[sub_resource type="QuadMesh" id="QuadMesh_ylmuh"]
+
+[sub_resource type="GDScript" id="GDScript_e45g8"]
+script/source = "extends State
+
+
+@export var walkState: State
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+"
+
+[sub_resource type="GDScript" id="GDScript_ii0a4"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+"
+
+[sub_resource type="GDScript" id="GDScript_e4odn"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_f3syv"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
+[sub_resource type="GDScript" id="GDScript_n7bu4"]
+script/source = "extends Node
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
+	pass
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pxqpj"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_tjj31")
+
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_kf0mh")
+
+[node name="PlayerDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector"]
+position = Vector2(76.5, 3.5)
+shape = SubResource("RectangleShape2D_rwnoo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.8, 0.8)
+
+[node name="Wisp" type="CharacterBody2D" parent="."]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("2_7fluc")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Wisp"]
+mesh = SubResource("QuadMesh_7edqs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wisp"]
+shape = SubResource("RectangleShape2D_xj26p")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="Wisp"]
+modulate = Color(0.00184107, 0.00184107, 0.00184107, 1)
+position = Vector2(10, -17)
+scale = Vector2(2, 20)
+mesh = SubResource("QuadMesh_ylmuh")
+
+[node name="StateMachine" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = SubResource("GDScript_e45g8")
+
+[node name="Walk" type="Node" parent="StateMachine"]
+script = SubResource("GDScript_ii0a4")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = SubResource("GDScript_e4odn")
+
+[node name="Dash" type="Node" parent="StateMachine"]
+script = SubResource("GDScript_f3syv")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = SubResource("GDScript_n7bu4")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="HealthComponent" parent="Components" node_paths=PackedStringArray("character") instance=ExtResource("8_f0rcp")]
+unique_name_in_owner = true
+character = NodePath("../..")
+maxHealth = 100.0
+
+[node name="HitboxComponent" parent="Components" node_paths=PackedStringArray("healthComponent", "collisionShape") instance=ExtResource("9_qao3k")]
+unique_name_in_owner = true
+healthComponent = NodePath("../HealthComponent")
+collisionShape = NodePath("PlayerCollision")
+
+[node name="PlayerCollision" type="CollisionShape2D" parent="Components/HitboxComponent"]
+shape = SubResource("RectangleShape2D_pxqpj")
+
+[connection signal="area_entered" from="PlayerDetector" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="PlayerDetector" to="." method="_on_area_2d_area_exited"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgd05frh0nedk"]
+
+[ext_resource type="Texture2D" uid="uid://b7bq7uxn2ce5s" path="res://Assets/Backgrounds/Small Decorations/Purple Butterfly/frame0000.png" id="1_6a20r"]
+[ext_resource type="Texture2D" uid="uid://cos0vmwydeklh" path="res://Assets/Backgrounds/Small Decorations/Purple Butterfly/frame0001.png" id="2_4k8pb"]
+[ext_resource type="Texture2D" uid="uid://detkse2l4xrev" path="res://Assets/Backgrounds/Small Decorations/Purple Butterfly/frame0002.png" id="3_ngdq4"]
+[ext_resource type="Texture2D" uid="uid://dgc61dhsakmed" path="res://Assets/Backgrounds/Small Decorations/Purple Butterfly/frame0003.png" id="4_p7nuk"]
+[ext_resource type="Texture2D" uid="uid://dt3aho7p8jt1j" path="res://Assets/Backgrounds/Small Decorations/Purple Butterfly/frame0004.png" id="5_qwj7q"]
+[ext_resource type="Texture2D" uid="uid://d07k56livakyn" path="res://Assets/Backgrounds/Small Decorations/Purple Butterfly/frame0005.png" id="6_id4nr"]
+[ext_resource type="Texture2D" uid="uid://bo7okbv1qsfnk" path="res://Assets/Backgrounds/Small Decorations/Purple Butterfly/frame0006.png" id="7_fy0mv"]
+[ext_resource type="Texture2D" uid="uid://dbk82vq2noei4" path="res://Assets/Backgrounds/Small Decorations/Purple Butterfly/frame0007.png" id="8_ivch6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bcx02"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6a20r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4k8pb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ngdq4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_p7nuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qwj7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_id4nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fy0mv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ivch6")
+}],
+"loop": true,
+"name": &"Purple Butterfly",
+"speed": 20.0
+}]
+
+[node name="Purple Butterfly" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bcx02")
+animation = &"Purple Butterfly"

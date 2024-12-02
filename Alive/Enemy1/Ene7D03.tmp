@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5erd8awa252k"]
+
+[ext_resource type="Script" path="res://Enemy1/Enemy1.gd" id="1_ucrsi"]
+[ext_resource type="Script" path="res://Enemy1/stateMachine.gd" id="2_57aor"]
+[ext_resource type="Script" path="res://States/EnemyStates/idle.gd" id="2_w57pg"]
+[ext_resource type="Script" path="res://States/EnemyStates/wander.gd" id="3_8mdsa"]
+[ext_resource type="Script" path="res://States/EnemyStates/guard.gd" id="4_3sr0a"]
+[ext_resource type="Script" path="res://States/EnemyStates/attack.gd" id="5_woo5n"]
+[ext_resource type="Script" path="res://Enemy1/is_controlled.gd" id="7_trw7a"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7npid"]
+size = Vector2(30, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxyk4"]
+size = Vector2(30, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgfqp"]
+size = Vector2(30, 125)
+
+[node name="Enemy1" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_ucrsi")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("QuadMesh_7npid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wxyk4")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Enemy"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_mgfqp")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("enemy", "initialState", "isControlled")]
+script = ExtResource("2_57aor")
+enemy = NodePath("..")
+initialState = NodePath("Wander")
+isControlled = NodePath("IsControlled")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("2_w57pg")
+
+[node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_8mdsa")
+enemy = NodePath("../..")
+
+[node name="Guard" type="Node" parent="StateMachine"]
+script = ExtResource("4_3sr0a")
+
+[node name="Attack" type="Node" parent="StateMachine"]
+script = ExtResource("5_woo5n")
+
+[node name="IsControlled" type="Node" parent="StateMachine"]
+script = ExtResource("7_trw7a")

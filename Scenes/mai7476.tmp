@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bx5443in28q7d"]
+
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_mh3w0"]
+[ext_resource type="PackedScene" uid="uid://c5erd8awa252k" path="res://Enemy1/Enemy1.tscn" id="3_u8wyb"]
+[ext_resource type="PackedScene" uid="uid://g13ahpynyerr" path="res://Scenes/DamageArea.tscn" id="4_dno7m"]
+[ext_resource type="PackedScene" uid="uid://st5jytjihoea" path="res://Player/Player.tscn" id="4_qyj1s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gg6ut"]
+size = Vector2(1202, 30)
+
+[sub_resource type="QuadMesh" id="QuadMesh_k1qt0"]
+size = Vector2(1202, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mqpog"]
+size = Vector2(21.5, 127)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_mh3w0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(593, 631)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_gg6ut")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+mesh = SubResource("QuadMesh_k1qt0")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(77, 555)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_mqpog")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(234, 393)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_mqpog")
+
+[node name="Player" parent="." instance=ExtResource("4_qyj1s")]
+position = Vector2(223, 546)
+
+[node name="Enemy1" parent="." instance=ExtResource("3_u8wyb")]
+position = Vector2(701, 409)
+
+[node name="Area2D" parent="." instance=ExtResource("4_dno7m")]
+position = Vector2(587, 543)
+
+[node name="Area2D2" parent="." instance=ExtResource("4_dno7m")]
+position = Vector2(777, 539)

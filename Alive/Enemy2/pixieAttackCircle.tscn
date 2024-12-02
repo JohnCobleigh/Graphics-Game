@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bg3vd07qtfhdm"]
+
+[ext_resource type="Script" path="res://Alive/Enemy2/pixieAttackCircle.gd" id="1_3jqwk"]
+[ext_resource type="Script" path="res://Components/HitboxComponent/hitboxComponent.gd" id="1_4cpxn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rgewp"]
+radius = 12.0414
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x45cv"]
+radius = 12.0473
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 261
+collision_mask = 261
+script = ExtResource("1_3jqwk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rgewp")
+
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("collisionShape")]
+collision_layer = 768
+collision_mask = 256
+script = ExtResource("1_4cpxn")
+collisionShape = NodePath("HitboxCollision")
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="HitboxComponent"]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("CircleShape2D_x45cv")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

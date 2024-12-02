@@ -1,0 +1,323 @@
+[gd_scene load_steps=65 format=3 uid="uid://dje1b7kdkhsc3"]
+
+[ext_resource type="Script" path="res://Alive/Enemy3/Enemy3.gd" id="1_uces3"]
+[ext_resource type="Texture2D" uid="uid://b06jy1pr7vfva" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0000.png" id="2_n37vw"]
+[ext_resource type="Texture2D" uid="uid://lw8yi505j1h2" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0001.png" id="3_hs8ao"]
+[ext_resource type="Texture2D" uid="uid://cqlkcub3ono7y" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0002.png" id="4_pn5by"]
+[ext_resource type="Texture2D" uid="uid://cdb0p70v8qxji" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0003.png" id="5_2d1dt"]
+[ext_resource type="Texture2D" uid="uid://n7l37oyfedyq" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0004.png" id="6_55jui"]
+[ext_resource type="Texture2D" uid="uid://b7oc4chmy4wei" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0005.png" id="7_jmrh5"]
+[ext_resource type="Texture2D" uid="uid://d4gpbvqbk3me7" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0006.png" id="8_061oe"]
+[ext_resource type="Texture2D" uid="uid://kkamr81lpdlt" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0007.png" id="9_icuhr"]
+[ext_resource type="Texture2D" uid="uid://dwjm8iq4786ki" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0008.png" id="10_x4i1l"]
+[ext_resource type="Texture2D" uid="uid://dh7ya62tekq3n" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0009.png" id="11_fhvl0"]
+[ext_resource type="Texture2D" uid="uid://d8s1faqjmx2f" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0010.png" id="12_a7oru"]
+[ext_resource type="Texture2D" uid="uid://dkeaxsils7om6" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0011.png" id="13_7k12d"]
+[ext_resource type="Texture2D" uid="uid://db0a8a8sdhurf" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0012.png" id="14_t87dg"]
+[ext_resource type="Texture2D" uid="uid://ov74lc817o1f" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0013.png" id="15_8q75k"]
+[ext_resource type="Texture2D" uid="uid://dypeneel8plk4" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0014.png" id="16_ofe2p"]
+[ext_resource type="Texture2D" uid="uid://dwkgsdk2bku23" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0015.png" id="17_pl4ul"]
+[ext_resource type="Texture2D" uid="uid://m0b7fk7e32t4" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0016.png" id="18_38wbp"]
+[ext_resource type="Texture2D" uid="uid://0tjba1ma4e6" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0017.png" id="19_q37gh"]
+[ext_resource type="Texture2D" uid="uid://3na8ejo4db87" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0018.png" id="20_rcnet"]
+[ext_resource type="Texture2D" uid="uid://bgg07guwqbyd3" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0019.png" id="21_5wurc"]
+[ext_resource type="Texture2D" uid="uid://6ybtwvxpujpl" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0020.png" id="22_7avs1"]
+[ext_resource type="Texture2D" uid="uid://bxxb7awbxq6xn" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0021.png" id="23_reyiv"]
+[ext_resource type="Texture2D" uid="uid://bpr1j1a316fmr" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0022.png" id="24_ykgg7"]
+[ext_resource type="Texture2D" uid="uid://bhiog31pkym1a" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0023.png" id="25_f1il7"]
+[ext_resource type="Texture2D" uid="uid://b75o8pil5avce" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0024.png" id="26_d3r36"]
+[ext_resource type="Texture2D" uid="uid://b25pkbw7nef65" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0025.png" id="27_t5t5p"]
+[ext_resource type="Texture2D" uid="uid://bf1e7ptteli7j" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0026.png" id="28_3d7d3"]
+[ext_resource type="Texture2D" uid="uid://btesmm4mbg610" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0027.png" id="29_w6jaf"]
+[ext_resource type="Texture2D" uid="uid://qmunw285vlvm" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0028.png" id="30_qaf4k"]
+[ext_resource type="Texture2D" uid="uid://b33ffa0eac0tc" path="res://Assets/Character Assets/Acorn/Acorn Attack/frame0029.png" id="31_87eeb"]
+[ext_resource type="Texture2D" uid="uid://dn6yrer2jiemv" path="res://Assets/Character Assets/Acorn/Mad Acorn Walk Animation/frame0013.png" id="45_vixmd"]
+[ext_resource type="Script" path="res://Scripts/States/stateMachine.gd" id="49_w5ams"]
+[ext_resource type="Texture2D" uid="uid://duihv2cbim7g4" path="res://Assets/Character Assets/Acorn/acorn1.png" id="50_3olfn"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy3/idle3.gd" id="50_ftrs3"]
+[ext_resource type="Texture2D" uid="uid://di60ghg4t5h68" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0000.png" id="51_3k0gh"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy3/wander3.gd" id="51_3snsb"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy3/guard3.gd" id="52_fyf66"]
+[ext_resource type="Texture2D" uid="uid://bfbjaqgf3bayh" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0001.png" id="52_r6xs5"]
+[ext_resource type="Texture2D" uid="uid://c6jkpu3mv3n50" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0002.png" id="53_044um"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy3/attack3.gd" id="53_78q5o"]
+[ext_resource type="Texture2D" uid="uid://ccv16qas1xlfx" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0003.png" id="54_iocoa"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy3/isControlled3.gd" id="54_okhvi"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy3/isDead3.gd" id="55_eh0ko"]
+[ext_resource type="Texture2D" uid="uid://cvl1x3ffaxijt" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0004.png" id="55_s1gow"]
+[ext_resource type="Texture2D" uid="uid://cv65akw47sh03" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0005.png" id="56_1ch41"]
+[ext_resource type="PackedScene" uid="uid://ckurjd6v8yrc4" path="res://Components/HealthComponent/healthComponent.tscn" id="56_b2vsn"]
+[ext_resource type="PackedScene" uid="uid://bvt1whru306yl" path="res://Components/HitboxComponent/hitboxComponent.tscn" id="57_oklm5"]
+[ext_resource type="Texture2D" uid="uid://c6708iusdth87" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0006.png" id="57_w7vgq"]
+[ext_resource type="Texture2D" uid="uid://bvvva5kqn3fm" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0007.png" id="58_4rndr"]
+[ext_resource type="Texture2D" uid="uid://b53nactuqnfi4" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0008.png" id="59_fsyce"]
+[ext_resource type="Texture2D" uid="uid://ck271ncgc6kwj" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0009.png" id="60_ggyn7"]
+[ext_resource type="Texture2D" uid="uid://5nq8c5t6apjw" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0010.png" id="61_ym7wr"]
+[ext_resource type="Texture2D" uid="uid://3j3rbqvj8stl" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0011.png" id="62_fjc8t"]
+[ext_resource type="Texture2D" uid="uid://rl4rxmyar4n3" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0012.png" id="63_p0r8j"]
+[ext_resource type="Texture2D" uid="uid://ddm3a661j4ftt" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0013.png" id="64_gym7k"]
+[ext_resource type="Texture2D" uid="uid://c6ttcgbna5y1a" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0014.png" id="65_rtc7j"]
+[ext_resource type="Texture2D" uid="uid://cd3y853g2ffav" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0015.png" id="66_6la6h"]
+[ext_resource type="Texture2D" uid="uid://cnrx5d8kl7t2m" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0016.png" id="67_j3qhw"]
+[ext_resource type="Texture2D" uid="uid://c0mtrjf3ais0k" path="res://Assets/Character Assets/Acorn/Acorn Walk/frame0017.png" id="68_j8qgx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xoq8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_n37vw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hs8ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pn5by")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2d1dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_55jui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jmrh5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_061oe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_icuhr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_x4i1l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_fhvl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_a7oru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7k12d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_t87dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8q75k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ofe2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_pl4ul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_38wbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_q37gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_rcnet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_5wurc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7avs1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_reyiv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ykgg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_f1il7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_d3r36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_t5t5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_3d7d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_w6jaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_qaf4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_87eeb")
+}],
+"loop": true,
+"name": &"Acorn Attack",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_vixmd")
+}],
+"loop": true,
+"name": &"Acorn Guard",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_3olfn")
+}],
+"loop": true,
+"name": &"Acorn Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_3k0gh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_r6xs5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_044um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_iocoa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_s1gow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_1ch41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_w7vgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_4rndr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_fsyce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_ggyn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_ym7wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_fjc8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_p0r8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_gym7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_rtc7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_6la6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_j3qhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_j8qgx")
+}],
+"loop": true,
+"name": &"Acorn Wander",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxyk4"]
+size = Vector2(109.931, 123.975)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7swdn"]
+size = Vector2(900, 330)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm52l"]
+size = Vector2(111.561, 122.788)
+
+[node name="Enemy3" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_uces3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(4.62493, 5.62833)
+scale = Vector2(0.17075, 0.163583)
+sprite_frames = SubResource("SpriteFrames_xoq8k")
+animation = &"Acorn Wander"
+flip_h = true
+
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(5.73866, -4.76106)
+shape = SubResource("RectangleShape2D_wxyk4")
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 130
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+position = Vector2(227, 3)
+shape = SubResource("RectangleShape2D_7swdn")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("enemy", "initialState")]
+unique_name_in_owner = true
+script = ExtResource("49_w5ams")
+enemy = NodePath("..")
+initialState = NodePath("Wander")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("50_ftrs3")
+enemy = NodePath("../..")
+
+[node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("51_3snsb")
+enemy = NodePath("../..")
+
+[node name="Guard" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("52_fyf66")
+enemy = NodePath("../..")
+
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("53_78q5o")
+enemy = NodePath("../..")
+
+[node name="IsControlled" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("54_okhvi")
+enemy = NodePath("../..")
+
+[node name="IsDead" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("55_eh0ko")
+enemy = NodePath("../..")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="HealthComponent" parent="Components" node_paths=PackedStringArray("character", "stateMachine") instance=ExtResource("56_b2vsn")]
+unique_name_in_owner = true
+character = NodePath("../..")
+maxHealth = 100.0
+stateMachine = NodePath("../../StateMachine")
+
+[node name="HitboxComponent" parent="Components" node_paths=PackedStringArray("person", "healthComponent", "collisionShape") groups=["Enemy"] instance=ExtResource("57_oklm5")]
+collision_layer = 296
+collision_mask = 518
+person = NodePath("../..")
+healthComponent = NodePath("../HealthComponent")
+collisionShape = NodePath("CharacterCollision")
+
+[node name="CharacterCollision" type="CollisionShape2D" parent="Components/HitboxComponent"]
+position = Vector2(5.71748, -4.16799)
+shape = SubResource("RectangleShape2D_lm52l")
+
+[connection signal="area_entered" from="EnemyDetector" to="." method="_on_enemy_detector_area_entered"]
+[connection signal="area_exited" from="EnemyDetector" to="." method="_on_enemy_detector_area_exited"]

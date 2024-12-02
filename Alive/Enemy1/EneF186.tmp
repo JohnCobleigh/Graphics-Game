@@ -1,0 +1,186 @@
+[gd_scene load_steps=32 format=3 uid="uid://c5erd8awa252k"]
+
+[ext_resource type="Script" path="res://Enemy1/Enemy1.gd" id="1_ucrsi"]
+[ext_resource type="Script" path="res://States/EnemyStates/stateMachine.gd" id="2_57aor"]
+[ext_resource type="Texture2D" uid="uid://jo38kvwhn6no" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0000.png" id="2_nwe3v"]
+[ext_resource type="Script" path="res://States/EnemyStates/Enemy1/idle.gd" id="2_w57pg"]
+[ext_resource type="Script" path="res://States/EnemyStates/Enemy1/wander.gd" id="3_8mdsa"]
+[ext_resource type="Texture2D" uid="uid://c8onstvntq0pj" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0001.png" id="3_8ret1"]
+[ext_resource type="Script" path="res://States/EnemyStates/Enemy1/guard.gd" id="4_3sr0a"]
+[ext_resource type="Texture2D" uid="uid://n81wn5oqus2g" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0002.png" id="4_56lso"]
+[ext_resource type="Texture2D" uid="uid://c6g5ehxg6wil1" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0003.png" id="5_kfasa"]
+[ext_resource type="Script" path="res://States/EnemyStates/Enemy1/attack.gd" id="5_woo5n"]
+[ext_resource type="Texture2D" uid="uid://do0mue223hmyu" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0004.png" id="6_775wb"]
+[ext_resource type="Texture2D" uid="uid://ckqaeur8je3b7" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0005.png" id="7_2wqe7"]
+[ext_resource type="Script" path="res://States/EnemyStates/Enemy1/isControlled.gd" id="7_trw7a"]
+[ext_resource type="Texture2D" uid="uid://pxqn8xrdiwu6" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0006.png" id="8_nulxo"]
+[ext_resource type="Script" path="res://States/EnemyStates/Enemy1/isDead.gd" id="8_pliui"]
+[ext_resource type="Texture2D" uid="uid://chvjxt8pbwnfr" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0007.png" id="9_ryxja"]
+[ext_resource type="PackedScene" uid="uid://ckurjd6v8yrc4" path="res://Components/HealthComponent/healthComponent.tscn" id="9_t4d5g"]
+[ext_resource type="Texture2D" uid="uid://bx36lnt6m2og7" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0008.png" id="10_synlh"]
+[ext_resource type="PackedScene" uid="uid://bvt1whru306yl" path="res://Components/HitboxComponent/hitboxComponent.tscn" id="10_tvny3"]
+[ext_resource type="Texture2D" uid="uid://b2lfqm14scs66" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0009.png" id="11_b1epk"]
+[ext_resource type="Texture2D" uid="uid://c23k06ffgkj0g" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0010.png" id="12_hlcnr"]
+[ext_resource type="Texture2D" uid="uid://c0rw3d4onj4vn" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0011.png" id="13_40ahw"]
+[ext_resource type="Texture2D" uid="uid://lw0b3vuca6k3" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0012.png" id="14_tr8c7"]
+[ext_resource type="Texture2D" uid="uid://vsc34qx6ljj4" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0013.png" id="15_qwven"]
+[ext_resource type="Texture2D" uid="uid://c8fdsuu7o1kes" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0014.png" id="16_8o7lx"]
+[ext_resource type="Texture2D" uid="uid://cxvxiwi5r6pat" path="res://Asstets/Character Assets/Slime/Slime Idle Animation/frame0015.png" id="17_s3vol"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xoq8k"]
+animations = [{
+"frames": [{
+"duration": 0.01,
+"texture": ExtResource("2_nwe3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8ret1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_56lso")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kfasa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_775wb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2wqe7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nulxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ryxja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_synlh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_b1epk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_hlcnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_40ahw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_tr8c7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qwven")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_8o7lx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_s3vol")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 15.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="QuadMesh" id="QuadMesh_7npid"]
+size = Vector2(30, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxyk4"]
+size = Vector2(122.5, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7swdn"]
+size = Vector2(510, 204)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm52l"]
+size = Vector2(122, 57)
+
+[node name="Enemy1" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_ucrsi")
+spawnPosition = Vector2(705, 525)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(11, -23)
+scale = Vector2(0.09475, 0.0875833)
+sprite_frames = SubResource("SpriteFrames_xoq8k")
+flip_h = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
+position = Vector2(7.5, 14.5)
+scale = Vector2(4.1, 0.472)
+mesh = SubResource("QuadMesh_7npid")
+
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(7, 15)
+shape = SubResource("RectangleShape2D_wxyk4")
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 130
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+position = Vector2(164, 0)
+shape = SubResource("RectangleShape2D_7swdn")
+metadata/_edit_lock_ = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("enemy", "initialState")]
+unique_name_in_owner = true
+script = ExtResource("2_57aor")
+enemy = NodePath("..")
+initialState = NodePath("Wander")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("2_w57pg")
+enemy = NodePath("../..")
+
+[node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_8mdsa")
+enemy = NodePath("../..")
+
+[node name="Guard" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_3sr0a")
+enemy = NodePath("../..")
+
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_woo5n")
+enemy = NodePath("../..")
+
+[node name="IsControlled" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_trw7a")
+enemy = NodePath("../..")
+
+[node name="IsDead" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("8_pliui")
+enemy = NodePath("../..")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="HealthComponent" parent="Components" node_paths=PackedStringArray("character", "stateMachine") instance=ExtResource("9_t4d5g")]
+character = NodePath("../..")
+maxHealth = 100.0
+stateMachine = NodePath("../../StateMachine")
+
+[node name="HitboxComponent" parent="Components" node_paths=PackedStringArray("person", "healthComponent", "collisionShape") groups=["Enemy"] instance=ExtResource("10_tvny3")]
+collision_layer = 296
+collision_mask = 518
+person = NodePath("../..")
+healthComponent = NodePath("../HealthComponent")
+collisionShape = NodePath("CharacterCollision")
+
+[node name="CharacterCollision" type="CollisionShape2D" parent="Components/HitboxComponent"]
+position = Vector2(8, 13.5)
+shape = SubResource("RectangleShape2D_lm52l")
+
+[connection signal="area_entered" from="EnemyDetector" to="." method="_on_enemy_detector_area_entered"]
+[connection signal="area_exited" from="EnemyDetector" to="." method="_on_enemy_detector_area_exited"]

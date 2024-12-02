@@ -1,15 +1,16 @@
 extends Area2D
 class_name HitboxComponent
 
-
+@export var person: CharacterBody2D
 @export var healthComponent: HealthComponent
 @export var collisionShape: CollisionShape2D
 #@export var master: CharacterBody2D
 
 
-func damage(damage):
+func damage(damageDealt):
 	if healthComponent:
-		healthComponent.takeDamage(damage)
+		healthComponent.takeDamage(damageDealt)
 
-#func followOwner():
-	#master
+func heal(damageDealt):
+	if healthComponent:
+		healthComponent.heal(damageDealt)

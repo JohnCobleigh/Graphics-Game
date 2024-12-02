@@ -1,0 +1,166 @@
+[gd_scene load_steps=28 format=3 uid="uid://ghjpugtlrqs8"]
+
+[ext_resource type="Script" path="res://Alive/Enemy4/Enemy4.gd" id="1_xhurh"]
+[ext_resource type="Script" path="res://Scripts/States/stateMachine.gd" id="2_dq530"]
+[ext_resource type="Texture2D" uid="uid://bo7lk831u461p" path="res://Assets/Character Assets/Rock Guy/rock guy1.png" id="2_eqsbh"]
+[ext_resource type="Texture2D" uid="uid://dt5i85py27kb1" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0000.png" id="3_pjqp1"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy4/idle4.gd" id="3_rbjll"]
+[ext_resource type="Texture2D" uid="uid://4uqxxp8fno0g" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0001.png" id="4_1w4l0"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy4/wander4.gd" id="4_phc62"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy4/guard4.gd" id="5_3yay3"]
+[ext_resource type="Texture2D" uid="uid://b57a3jgtrv6xu" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0002.png" id="5_wa067"]
+[ext_resource type="Texture2D" uid="uid://ckd1auvhmqhtw" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0003.png" id="6_7qkki"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy4/attack4.gd" id="6_fippi"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy4/isControlled4.gd" id="7_d3okj"]
+[ext_resource type="Texture2D" uid="uid://cwoqtymfxfnct" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0004.png" id="7_ks7f7"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy4/isDead4.gd" id="8_jv2dx"]
+[ext_resource type="Texture2D" uid="uid://b40aeep1xkk8m" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0005.png" id="8_p6hvj"]
+[ext_resource type="PackedScene" uid="uid://ckurjd6v8yrc4" path="res://Components/HealthComponent/healthComponent.tscn" id="9_gkly1"]
+[ext_resource type="Texture2D" uid="uid://c31dqrdhpr1hh" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0006.png" id="9_wihkb"]
+[ext_resource type="PackedScene" uid="uid://bvt1whru306yl" path="res://Components/HitboxComponent/hitboxComponent.tscn" id="10_2xwhd"]
+[ext_resource type="Texture2D" uid="uid://q3cmejoaslqa" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0007.png" id="10_vixl6"]
+[ext_resource type="Texture2D" uid="uid://dt8ytbdauo6oe" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0008.png" id="11_1ula1"]
+[ext_resource type="Texture2D" uid="uid://dykgcda3qh6b8" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0009.png" id="12_yl42k"]
+[ext_resource type="Texture2D" uid="uid://6k8iplfqgls1" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0010.png" id="13_8sjvm"]
+[ext_resource type="Texture2D" uid="uid://dbnw2mo6e7ea3" path="res://Assets/Character Assets/Rock Guy/Walk Guy Walk/frame0011.png" id="14_pyri0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xoq8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eqsbh")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pjqp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1w4l0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wa067")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7qkki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ks7f7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_p6hvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_wihkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vixl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_1ula1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_yl42k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8sjvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_pyri0")
+}],
+"loop": true,
+"name": &"Wander",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxyk4"]
+size = Vector2(73.8208, 87.8678)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7swdn"]
+size = Vector2(852, 280)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm52l"]
+size = Vector2(74.0168, 88.2961)
+
+[node name="Enemy4" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_xhurh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-0.352112, -3.23893)
+scale = Vector2(0.222029, 0.205235)
+sprite_frames = SubResource("SpriteFrames_xoq8k")
+animation = &"Wander"
+frame_progress = 0.219976
+flip_h = true
+
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-0.6604, 17.4411)
+shape = SubResource("RectangleShape2D_wxyk4")
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 130
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+position = Vector2(227, 3)
+shape = SubResource("RectangleShape2D_7swdn")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("enemy", "initialState")]
+unique_name_in_owner = true
+script = ExtResource("2_dq530")
+enemy = NodePath("..")
+initialState = NodePath("Wander")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_rbjll")
+enemy = NodePath("../..")
+
+[node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_phc62")
+enemy = NodePath("../..")
+
+[node name="Guard" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_3yay3")
+enemy = NodePath("../..")
+
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_fippi")
+enemy = NodePath("../..")
+
+[node name="IsControlled" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_d3okj")
+enemy = NodePath("../..")
+
+[node name="IsDead" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("8_jv2dx")
+enemy = NodePath("../..")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="HealthComponent" parent="Components" node_paths=PackedStringArray("character", "stateMachine") instance=ExtResource("9_gkly1")]
+unique_name_in_owner = true
+character = NodePath("../..")
+maxHealth = 100.0
+stateMachine = NodePath("../../StateMachine")
+
+[node name="HitboxComponent" parent="Components" node_paths=PackedStringArray("person", "healthComponent", "collisionShape") groups=["Enemy"] instance=ExtResource("10_2xwhd")]
+collision_layer = 296
+collision_mask = 518
+person = NodePath("../..")
+healthComponent = NodePath("../HealthComponent")
+collisionShape = NodePath("CharacterCollision")
+
+[node name="CharacterCollision" type="CollisionShape2D" parent="Components/HitboxComponent"]
+position = Vector2(-0.829407, 17.284)
+shape = SubResource("RectangleShape2D_lm52l")
+
+[connection signal="area_entered" from="EnemyDetector" to="." method="_on_enemy_detector_area_entered"]
+[connection signal="area_exited" from="EnemyDetector" to="." method="_on_enemy_detector_area_exited"]

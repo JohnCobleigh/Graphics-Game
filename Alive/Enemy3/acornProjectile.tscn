@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bt44ybc5ntfoq"]
+
+[ext_resource type="Script" path="res://Alive/Enemy3/acornProjectile.gd" id="1_5cn3x"]
+[ext_resource type="Texture2D" uid="uid://cd7a6xjb0ikdo" path="res://Assets/Other/Projectiles/acorn projectile.png" id="2_qsvj2"]
+[ext_resource type="Script" path="res://Components/HitboxComponent/hitboxComponent.gd" id="3_aepwu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6yif"]
+size = Vector2(29.5, 32.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxygr"]
+size = Vector2(29.5, 32.25)
+
+[node name="AcornProjectile" type="Area2D"]
+collision_mask = 129
+script = ExtResource("1_5cn3x")
+
+[node name="AcornProjectile" type="Sprite2D" parent="."]
+position = Vector2(-3.28108, 2.67332)
+rotation = -1.5708
+scale = Vector2(0.111898, 0.125898)
+texture = ExtResource("2_qsvj2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 2.125)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_x6yif")
+
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("collisionShape")]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("3_aepwu")
+collisionShape = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+position = Vector2(0.25, 2.125)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_jxygr")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

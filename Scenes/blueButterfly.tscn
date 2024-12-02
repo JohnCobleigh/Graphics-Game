@@ -1,0 +1,48 @@
+[gd_scene load_steps=10 format=3 uid="uid://bxgkuq1li2mck"]
+
+[ext_resource type="Texture2D" uid="uid://fuxyn0e5lm4b" path="res://Assets/Backgrounds/Small Decorations/Blue Butterfly/frame0000.png" id="1_4qr5t"]
+[ext_resource type="Texture2D" uid="uid://d08ecsx02kkqp" path="res://Assets/Backgrounds/Small Decorations/Blue Butterfly/frame0001.png" id="2_12f1f"]
+[ext_resource type="Texture2D" uid="uid://b57x1x10rmii8" path="res://Assets/Backgrounds/Small Decorations/Blue Butterfly/frame0002.png" id="3_ax1d2"]
+[ext_resource type="Texture2D" uid="uid://w7d24fl8co0l" path="res://Assets/Backgrounds/Small Decorations/Blue Butterfly/frame0003.png" id="4_2425q"]
+[ext_resource type="Texture2D" uid="uid://wsbxf3asqa5o" path="res://Assets/Backgrounds/Small Decorations/Blue Butterfly/frame0004.png" id="5_0ggww"]
+[ext_resource type="Texture2D" uid="uid://c2m6231q8gw6v" path="res://Assets/Backgrounds/Small Decorations/Blue Butterfly/frame0005.png" id="6_00n6w"]
+[ext_resource type="Texture2D" uid="uid://0mjfl4h1wvkt" path="res://Assets/Backgrounds/Small Decorations/Blue Butterfly/frame0006.png" id="7_cutfl"]
+[ext_resource type="Texture2D" uid="uid://37v3mcnjrphd" path="res://Assets/Backgrounds/Small Decorations/Blue Butterfly/frame0007.png" id="8_dwrhd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mpblb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4qr5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_12f1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ax1d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2425q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0ggww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_00n6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cutfl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dwrhd")
+}],
+"loop": true,
+"name": &"Blue Butterfly",
+"speed": 20.0
+}]
+
+[node name="Blue Butterfly" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mpblb")
+animation = &"Blue Butterfly"

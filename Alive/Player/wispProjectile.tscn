@@ -1,0 +1,138 @@
+[gd_scene load_steps=30 format=3 uid="uid://t2uv52uhcisc"]
+
+[ext_resource type="Script" path="res://Alive/Player/wispProjectile.gd" id="1_vot8l"]
+[ext_resource type="Texture2D" uid="uid://5sun55gigg41" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0000.png" id="2_03sx2"]
+[ext_resource type="Texture2D" uid="uid://cr4qhnb6un0ls" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0001.png" id="3_kw6qt"]
+[ext_resource type="Texture2D" uid="uid://dpy3klg2ehmq0" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0002.png" id="4_nh4sy"]
+[ext_resource type="Texture2D" uid="uid://jrpfrh3bik8e" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0003.png" id="5_amw37"]
+[ext_resource type="Texture2D" uid="uid://c24aulhi8lhvc" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0004.png" id="6_s3lqj"]
+[ext_resource type="Texture2D" uid="uid://dom7urwjguslr" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0005.png" id="7_jbf1o"]
+[ext_resource type="Texture2D" uid="uid://c3geubai3rbi0" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0006.png" id="8_n26kq"]
+[ext_resource type="Texture2D" uid="uid://bnb22aoso3fia" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0007.png" id="9_x1kp7"]
+[ext_resource type="Texture2D" uid="uid://cirmn0ldpji30" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0008.png" id="10_kgytp"]
+[ext_resource type="Texture2D" uid="uid://dne4kb0yqcdm3" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0009.png" id="11_avpsp"]
+[ext_resource type="Texture2D" uid="uid://0rrh0j85yi00" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0010.png" id="12_318dx"]
+[ext_resource type="Texture2D" uid="uid://j75palrcyymw" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0011.png" id="13_exnhv"]
+[ext_resource type="Texture2D" uid="uid://ct1aikyuo01c4" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0012.png" id="14_fsspp"]
+[ext_resource type="Texture2D" uid="uid://br8i180ptvgan" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0013.png" id="15_i5ytv"]
+[ext_resource type="Texture2D" uid="uid://coioqle1v0mln" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0014.png" id="16_f2qc1"]
+[ext_resource type="Texture2D" uid="uid://7ym1kxsysngx" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0015.png" id="17_jropf"]
+[ext_resource type="Texture2D" uid="uid://dn1btiksvr2wj" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0016.png" id="18_4cnon"]
+[ext_resource type="Texture2D" uid="uid://qtpo7vnn07el" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0017.png" id="19_jm3qc"]
+[ext_resource type="Texture2D" uid="uid://covnmvnrenm6u" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0018.png" id="20_1e7re"]
+[ext_resource type="Texture2D" uid="uid://qbxrxrnlimm4" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0019.png" id="21_mtu0g"]
+[ext_resource type="Texture2D" uid="uid://d0tws0r43s2e" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0020.png" id="22_uwykk"]
+[ext_resource type="Texture2D" uid="uid://by6ahjp2qg7ew" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0021.png" id="23_ksf5n"]
+[ext_resource type="Texture2D" uid="uid://drs2bfqeexhy2" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0022.png" id="24_ibdbo"]
+[ext_resource type="Texture2D" uid="uid://bjkpx4fktfwb3" path="res://Assets/Character Assets/Wisp/Wisp Attack Animation/frame0023.png" id="25_xu101"]
+[ext_resource type="PackedScene" uid="uid://bvt1whru306yl" path="res://Components/HitboxComponent/hitboxComponent.tscn" id="26_vgjkj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f2xj0"]
+animations = [{
+"frames": [{
+"duration": 0.25,
+"texture": ExtResource("2_03sx2")
+}, {
+"duration": 0.25,
+"texture": ExtResource("3_kw6qt")
+}, {
+"duration": 0.25,
+"texture": ExtResource("4_nh4sy")
+}, {
+"duration": 0.25,
+"texture": ExtResource("5_amw37")
+}, {
+"duration": 0.25,
+"texture": ExtResource("6_s3lqj")
+}, {
+"duration": 0.25,
+"texture": ExtResource("7_jbf1o")
+}, {
+"duration": 0.25,
+"texture": ExtResource("8_n26kq")
+}, {
+"duration": 0.25,
+"texture": ExtResource("9_x1kp7")
+}, {
+"duration": 0.25,
+"texture": ExtResource("10_kgytp")
+}, {
+"duration": 0.25,
+"texture": ExtResource("11_avpsp")
+}, {
+"duration": 0.25,
+"texture": ExtResource("12_318dx")
+}, {
+"duration": 0.25,
+"texture": ExtResource("13_exnhv")
+}, {
+"duration": 0.25,
+"texture": ExtResource("14_fsspp")
+}, {
+"duration": 0.25,
+"texture": ExtResource("15_i5ytv")
+}, {
+"duration": 0.25,
+"texture": ExtResource("16_f2qc1")
+}, {
+"duration": 0.25,
+"texture": ExtResource("17_jropf")
+}, {
+"duration": 0.25,
+"texture": ExtResource("18_4cnon")
+}, {
+"duration": 0.25,
+"texture": ExtResource("19_jm3qc")
+}, {
+"duration": 0.25,
+"texture": ExtResource("20_1e7re")
+}, {
+"duration": 0.25,
+"texture": ExtResource("21_mtu0g")
+}, {
+"duration": 0.25,
+"texture": ExtResource("22_uwykk")
+}, {
+"duration": 0.25,
+"texture": ExtResource("23_ksf5n")
+}, {
+"duration": 0.25,
+"texture": ExtResource("24_ibdbo")
+}, {
+"duration": 0.25,
+"texture": ExtResource("25_xu101")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5sai"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6uli"]
+
+[node name="wispProjectile" type="Area2D"]
+scale = Vector2(2.10119, 2.10119)
+collision_layer = 261
+collision_mask = 261
+script = ExtResource("1_vot8l")
+
+[node name="wispProjectileAnimation" type="AnimatedSprite2D" parent="."]
+position = Vector2(-14, 1)
+scale = Vector2(0.0375942, 0.037594)
+sprite_frames = SubResource("SpriteFrames_f2xj0")
+autoplay = "default"
+frame_progress = 0.301672
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b5sai")
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("collisionShape") instance=ExtResource("26_vgjkj")]
+collision_layer = 768
+collision_mask = 256
+collisionShape = NodePath("wispProjectileCollision")
+
+[node name="wispProjectileCollision" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("RectangleShape2D_g6uli")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfsqod5cgsd8"]
+
+[ext_resource type="Script" path="res://Alive/Enemy4/bomb.gd" id="1_gh5xw"]
+[ext_resource type="Texture2D" uid="uid://xdwy44agfu0y" path="res://Assets/Other/Projectiles/bomb 1.png" id="1_ujaq2"]
+[ext_resource type="Script" path="res://Components/HitboxComponent/hitboxComponent.gd" id="2_8syf8"]
+[ext_resource type="Texture2D" uid="uid://s8kpdy1vytgy" path="res://Assets/Other/Projectiles/explosion1.png" id="4_c84is"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0mkt3"]
+radius = 19.6683
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fw6t7"]
+radius = 19.7734
+
+[node name="Area2D" type="Area2D"]
+collision_mask = 129
+script = ExtResource("1_gh5xw")
+
+[node name="Bomb1" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-0.871235, -1.00048)
+scale = Vector2(0.160738, 0.160738)
+texture = ExtResource("1_ujaq2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0mkt3")
+
+[node name="HitboxComponent" type="Area2D" parent="." node_paths=PackedStringArray("collisionShape")]
+collision_layer = 128
+collision_mask = 128
+script = ExtResource("2_8syf8")
+collisionShape = NodePath("CollisionShape2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_fw6t7")
+
+[node name="Explosion1" type="Sprite2D" parent="HitboxComponent/CollisionShape2D"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(5.60733, -2.45104)
+scale = Vector2(0.166941, 0.166941)
+texture = ExtResource("4_c84is")
+
+[connection signal="area_entered" from="HitboxComponent" to="." method="_on_hitbox_component_area_entered"]

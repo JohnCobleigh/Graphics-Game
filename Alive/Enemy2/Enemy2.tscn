@@ -1,0 +1,269 @@
+[gd_scene load_steps=52 format=3 uid="uid://diibk3mdmdxx6"]
+
+[ext_resource type="Script" path="res://Alive/Enemy2/Enemy2.gd" id="1_6d8q6"]
+[ext_resource type="Texture2D" uid="uid://cst4sif0n8im2" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0000.png" id="2_kc7uc"]
+[ext_resource type="Texture2D" uid="uid://dwnw2f3ii48rq" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0000.png" id="2_mgtwb"]
+[ext_resource type="Script" path="res://Scripts/States/stateMachine.gd" id="2_otm8j"]
+[ext_resource type="Texture2D" uid="uid://cako0hb4ds66t" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0001.png" id="3_46wo4"]
+[ext_resource type="Texture2D" uid="uid://d1ikvix4njr2i" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0001.png" id="3_s4rrl"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy2/idle2.gd" id="3_tci4a"]
+[ext_resource type="Texture2D" uid="uid://ms76yurg4w6r" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0002.png" id="4_56xl8"]
+[ext_resource type="Texture2D" uid="uid://ddiokr42aul2h" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0002.png" id="4_bqejh"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy2/wander2.gd" id="4_w6prl"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy2/guard2.gd" id="5_cy5ps"]
+[ext_resource type="Texture2D" uid="uid://djbxgdejgrk78" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0003.png" id="5_n3eg0"]
+[ext_resource type="Texture2D" uid="uid://cpfg38ji3psx2" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0003.png" id="5_qgb84"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy2/attack2.gd" id="6_fprji"]
+[ext_resource type="Texture2D" uid="uid://b6la3gnn5ngwu" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0004.png" id="6_rowtc"]
+[ext_resource type="Texture2D" uid="uid://cacpik3yj310g" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0004.png" id="6_sm8jm"]
+[ext_resource type="Texture2D" uid="uid://b1jdti7cw601w" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0005.png" id="7_p8qb3"]
+[ext_resource type="Texture2D" uid="uid://bt2pqnx1r4ggr" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0005.png" id="7_qmvo1"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy2/isControlled2.gd" id="7_snwjp"]
+[ext_resource type="Texture2D" uid="uid://dltis12yoy12p" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0006.png" id="8_5u6cb"]
+[ext_resource type="Script" path="res://Scripts/States/EnemyStates/Enemy2/isDead2.gd" id="8_rmrl3"]
+[ext_resource type="Texture2D" uid="uid://bsblr2nyf2wxk" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0006.png" id="8_yxmbe"]
+[ext_resource type="PackedScene" uid="uid://ckurjd6v8yrc4" path="res://Components/HealthComponent/healthComponent.tscn" id="9_44r88"]
+[ext_resource type="Texture2D" uid="uid://crxdftuqwatlr" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0007.png" id="9_3031v"]
+[ext_resource type="Texture2D" uid="uid://d1ucphlvji3oc" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0007.png" id="9_my0vj"]
+[ext_resource type="Texture2D" uid="uid://e4rr680qc8h1" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0008.png" id="10_fub2s"]
+[ext_resource type="PackedScene" uid="uid://bvt1whru306yl" path="res://Components/HitboxComponent/hitboxComponent.tscn" id="10_mbmp6"]
+[ext_resource type="Texture2D" uid="uid://4g6mu7mfohgq" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0008.png" id="10_vikcw"]
+[ext_resource type="Texture2D" uid="uid://dydhtd4cdss0d" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0009.png" id="11_cgy0l"]
+[ext_resource type="Texture2D" uid="uid://erc7gd08p2ot" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0009.png" id="11_foflf"]
+[ext_resource type="Texture2D" uid="uid://c4c5naaf2dbtl" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0010.png" id="12_4qsoy"]
+[ext_resource type="Texture2D" uid="uid://bc0p2pn0p1wkj" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0010.png" id="12_fh0nu"]
+[ext_resource type="Texture2D" uid="uid://o8av548j2t0a" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0011.png" id="13_buuaj"]
+[ext_resource type="Texture2D" uid="uid://bl2wmw2yhyo0v" path="res://Assets/Character Assets/Pixie/Pixie Idle Animation/frame0011.png" id="13_cqu0l"]
+[ext_resource type="Texture2D" uid="uid://bib2xwmcghv3" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0012.png" id="14_jeo6f"]
+[ext_resource type="Texture2D" uid="uid://buwaq0y1q8s8p" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0013.png" id="15_g25tu"]
+[ext_resource type="Texture2D" uid="uid://b2lmdufy3jxrt" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0014.png" id="16_ad33q"]
+[ext_resource type="Texture2D" uid="uid://cxibgnr6uj0xs" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0015.png" id="17_0a6km"]
+[ext_resource type="Texture2D" uid="uid://jw2fas7fo3jj" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0016.png" id="18_dm8jj"]
+[ext_resource type="Texture2D" uid="uid://ccxp0v8yjg2kx" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0017.png" id="19_rccea"]
+[ext_resource type="Texture2D" uid="uid://wmymt0sqb5ya" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0018.png" id="20_0jgk6"]
+[ext_resource type="Texture2D" uid="uid://bi1wxc5dgdl1x" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0019.png" id="21_5vmnb"]
+[ext_resource type="Texture2D" uid="uid://d1d5os2uab3yk" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0020.png" id="22_t0osq"]
+[ext_resource type="Texture2D" uid="uid://d6p1x0526a8l" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0021.png" id="23_370tp"]
+[ext_resource type="Texture2D" uid="uid://di1u1mb8idojx" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0022.png" id="24_t0fex"]
+[ext_resource type="Texture2D" uid="uid://do8nk85f6nghh" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0023.png" id="25_w5fdo"]
+[ext_resource type="Texture2D" uid="uid://bmtujrwctflgr" path="res://Assets/Character Assets/Pixie/Pixie Attack Animation/frame0024.png" id="26_4tcfl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0cd5u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mgtwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s4rrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bqejh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qgb84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rowtc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qmvo1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yxmbe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3031v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fub2s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_foflf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4qsoy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_buuaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_jeo6f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_g25tu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ad33q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0a6km")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_dm8jj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rccea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_0jgk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_5vmnb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_t0osq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_370tp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_t0fex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_w5fdo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_4tcfl")
+}],
+"loop": true,
+"name": &"Pixie Attack",
+"speed": 25.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kc7uc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_46wo4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_56xl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_n3eg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sm8jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_p8qb3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5u6cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_my0vj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vikcw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cgy0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_fh0nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cqu0l")
+}],
+"loop": true,
+"name": &"Pixie Idle",
+"speed": 30.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kc7uc")
+}],
+"loop": true,
+"name": &"Still",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxyk4"]
+size = Vector2(73.4901, 67.9277)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7swdn"]
+size = Vector2(969.559, 535.579)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lm52l"]
+size = Vector2(73.2628, 67.7255)
+
+[node name="Enemy2" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_6d8q6")
+spawnPosition = Vector2(800, 540)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(1.23761, -9.84517)
+scale = Vector2(0.0911961, 0.0911961)
+sprite_frames = SubResource("SpriteFrames_0cd5u")
+animation = &"Still"
+flip_h = true
+
+[node name="WorldCollision" type="CollisionShape2D" parent="."]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_wxyk4")
+
+[node name="EnemyDetector" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 130
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
+position = Vector2(164, 0)
+shape = SubResource("RectangleShape2D_7swdn")
+metadata/_edit_lock_ = true
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("enemy", "initialState")]
+unique_name_in_owner = true
+script = ExtResource("2_otm8j")
+enemy = NodePath("..")
+initialState = NodePath("Wander")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("3_tci4a")
+enemy = NodePath("../..")
+
+[node name="Wander" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_w6prl")
+enemy = NodePath("../..")
+
+[node name="Guard" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_cy5ps")
+enemy = NodePath("../..")
+
+[node name="Attack" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_fprji")
+enemy = NodePath("../..")
+
+[node name="IsControlled" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("7_snwjp")
+enemy = NodePath("../..")
+
+[node name="IsDead" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("8_rmrl3")
+enemy = NodePath("../..")
+
+[node name="Components" type="Node2D" parent="."]
+
+[node name="HealthComponent" parent="Components" node_paths=PackedStringArray("character", "stateMachine") instance=ExtResource("9_44r88")]
+unique_name_in_owner = true
+character = NodePath("../..")
+maxHealth = 100.0
+stateMachine = NodePath("../../StateMachine")
+
+[node name="HitboxComponent" parent="Components" node_paths=PackedStringArray("person", "healthComponent", "collisionShape") groups=["Enemy"] instance=ExtResource("10_mbmp6")]
+collision_layer = 296
+collision_mask = 518
+person = NodePath("../..")
+healthComponent = NodePath("../HealthComponent")
+collisionShape = NodePath("CharacterCollision")
+
+[node name="CharacterCollision" type="CollisionShape2D" parent="Components/HitboxComponent"]
+shape = SubResource("RectangleShape2D_lm52l")
+
+[connection signal="area_entered" from="EnemyDetector" to="." method="_on_enemy_detector_area_entered"]
+[connection signal="area_exited" from="EnemyDetector" to="." method="_on_enemy_detector_area_exited"]

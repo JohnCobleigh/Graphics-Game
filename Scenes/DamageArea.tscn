@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://g13ahpynyerr"]
+
+[ext_resource type="Script" path="res://Scripts/DamageArea.gd" id="1_6p4np"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pn1j5"]
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_pn1j5")
+script = ExtResource("1_6p4np")
+
+[connection signal="area_entered" from="." to="CollisionShape2D" method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="." to="CollisionShape2D" method="_on_area_2d_area_exited"]
