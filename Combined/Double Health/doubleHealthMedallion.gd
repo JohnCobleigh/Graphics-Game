@@ -5,5 +5,6 @@ func _on_hitbox_component_area_entered(area: Area2D) -> void:
 		var player: Player = area.get_parent().get_parent() 
 		player.healthComponent.maxHealth  = 200
 		player.healthComponent.health = 200 
+		player.wispHealth = 200
 		queue_free()
 	

@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://bx5443in28q7d"]
+[gd_scene load_steps=103 format=3 uid="uid://bx5443in28q7d"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_mh3w0"]
 [ext_resource type="Texture2D" uid="uid://cltdwqo4p36c4" path="res://Assets/Backgrounds/background2.png" id="2_05kqs"]
@@ -37,8 +37,12 @@
 [ext_resource type="Texture2D" uid="uid://ddsjvf7ugkr4t" path="res://Assets/World/cave floor1.png" id="20_kc35i"]
 [ext_resource type="Texture2D" uid="uid://cb6qil78qmc36" path="res://Assets/Environment/stone1.png" id="21_o20rh"]
 [ext_resource type="Texture2D" uid="uid://do0glpin0s1uq" path="res://Assets/World/cloud1.png" id="22_tbnao"]
+[ext_resource type="Script" path="res://Alive/Player/healthUI.gd" id="23_h8g7o"]
 [ext_resource type="Texture2D" uid="uid://dp1o3q7lxirf3" path="res://Assets/World/cloud2.png" id="23_rv6vg"]
+[ext_resource type="Texture2D" uid="uid://b6t7g80ymj68o" path="res://Assets/Other/heartUI1.png" id="24_4u5lc"]
+[ext_resource type="Texture2D" uid="uid://dpo8jvobc7qa5" path="res://Assets/Other/heartUI2.png" id="25_gbu01"]
 [ext_resource type="PackedScene" uid="uid://dje1b7kdkhsc3" path="res://Alive/Enemy3/Enemy3.tscn" id="26_5bmqs"]
+[ext_resource type="Texture2D" uid="uid://bpda31ago0er4" path="res://Assets/Other/heartUI3.png" id="26_f0xdi"]
 [ext_resource type="Texture2D" uid="uid://cg7dnyj30bx2j" path="res://Assets/World/bottom cave section1.png" id="26_n8ikb"]
 [ext_resource type="PackedScene" uid="uid://cojyb22jknbqq" path="res://Combined/Heart 1/Heart1.tscn" id="27_f4sxf"]
 [ext_resource type="PackedScene" uid="uid://ghjpugtlrqs8" path="res://Alive/Enemy4/Enemy4.tscn" id="27_qeahu"]
@@ -389,7 +393,323 @@ scale = Vector2(0.0746026, 0.0746026)
 texture = ExtResource("5_gglyq")
 
 [node name="Player" parent="." instance=ExtResource("4_qyj1s")]
+unique_name_in_owner = true
 position = Vector2(241, 522)
+
+[node name="Health2" type="Node2D" parent="Player"]
+light_mask = 524289
+visibility_layer = 524289
+script = ExtResource("23_h8g7o")
+
+[node name="Heart1" type="Node2D" parent="Player/Health2"]
+position = Vector2(-764, -442)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart1"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart1"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart1"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart2" type="Node2D" parent="Player/Health2"]
+position = Vector2(-686, -442)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart2"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart2"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart2"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart3" type="Node2D" parent="Player/Health2"]
+position = Vector2(-608, -442)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart3"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart3"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart3"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart4" type="Node2D" parent="Player/Health2"]
+position = Vector2(-532, -442)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart4"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart4"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart4"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart5" type="Node2D" parent="Player/Health2"]
+position = Vector2(-451, -442)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart5"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart5"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart5"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart6" type="Node2D" parent="Player/Health2"]
+position = Vector2(-370, -442)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart6"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart6"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart6"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart7" type="Node2D" parent="Player/Health2"]
+position = Vector2(-295, -442)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart7"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart7"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart7"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart8" type="Node2D" parent="Player/Health2"]
+position = Vector2(-220, -442)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart8"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart8"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart8"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart9" type="Node2D" parent="Player/Health2"]
+position = Vector2(-145, -442)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart9"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart9"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart9"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart10" type="Node2D" parent="Player/Health2"]
+position = Vector2(-68, -442)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart10"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart10"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart10"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart11" type="Node2D" parent="Player/Health2"]
+visible = false
+position = Vector2(-764, -361.091)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart11"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart11"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart11"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart12" type="Node2D" parent="Player/Health2"]
+visible = false
+position = Vector2(-686, -361.091)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart12"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart12"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart12"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart13" type="Node2D" parent="Player/Health2"]
+visible = false
+position = Vector2(-608, -361.091)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart13"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart13"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart13"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart14" type="Node2D" parent="Player/Health2"]
+visible = false
+position = Vector2(-532, -361.091)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart14"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart14"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart14"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart15" type="Node2D" parent="Player/Health2"]
+visible = false
+position = Vector2(-451, -361.091)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart15"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart15"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart15"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart16" type="Node2D" parent="Player/Health2"]
+visible = false
+position = Vector2(-370, -361.091)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart16"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart16"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart16"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart17" type="Node2D" parent="Player/Health2"]
+visible = false
+position = Vector2(-295, -361.091)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart17"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart17"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart17"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart18" type="Node2D" parent="Player/Health2"]
+visible = false
+position = Vector2(-220, -361.091)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart18"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart18"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart18"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart19" type="Node2D" parent="Player/Health2"]
+visible = false
+position = Vector2(-145, -361.091)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart19"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart19"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart19"]
+visible = false
+texture = ExtResource("26_f0xdi")
+
+[node name="Heart20" type="Node2D" parent="Player/Health2"]
+visible = false
+position = Vector2(-68, -361.091)
+scale = Vector2(0.37, 0.37)
+
+[node name="HeartUi1" type="Sprite2D" parent="Player/Health2/Heart20"]
+texture = ExtResource("24_4u5lc")
+
+[node name="HeartUi2" type="Sprite2D" parent="Player/Health2/Heart20"]
+visible = false
+texture = ExtResource("25_gbu01")
+
+[node name="HeartUi3" type="Sprite2D" parent="Player/Health2/Heart20"]
+visible = false
+texture = ExtResource("26_f0xdi")
 
 [node name="Area2D" parent="." instance=ExtResource("4_dno7m")]
 position = Vector2(12300.8, 860.312)
@@ -1515,9 +1835,9 @@ scale = Vector2(0.522484, 0.2765)
 texture = ExtResource("9_rehfw")
 
 [node name="WallEntrance10" type="Sprite2D" parent="Right Mountain"]
-position = Vector2(22440, 253.081)
+position = Vector2(22697.7, -100.519)
 rotation = 3.16093
-scale = Vector2(1.49837, 1.99226)
+scale = Vector2(2.00002, 2.70929)
 texture = ExtResource("15_7wtoe")
 flip_v = true
 
@@ -1802,7 +2122,6 @@ shape = SubResource("RectangleShape2D_phlea")
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="WorldCollision/WorldBorder"]
 position = Vector2(17010.4, -970.656)
 rotation = 1.77678
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_stvjd")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="WorldCollision/WorldBorder"]

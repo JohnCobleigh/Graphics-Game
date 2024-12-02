@@ -437,7 +437,7 @@ size = Vector2(30, 125)
 size = Vector2(92.2916, 98.8214)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7swdn"]
-size = Vector2(1063.15, 406.455)
+size = Vector2(1314.25, 471.996)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lm52l"]
 size = Vector2(92.5637, 99.1068)
@@ -472,7 +472,7 @@ collision_layer = 0
 collision_mask = 130
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetector"]
-position = Vector2(216.405, -35.1407)
+position = Vector2(221.45, -102.412)
 shape = SubResource("RectangleShape2D_7swdn")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("enemy", "initialState")]
@@ -510,7 +510,7 @@ enemy = NodePath("../..")
 [node name="HealthComponent" parent="Components" node_paths=PackedStringArray("character", "stateMachine") instance=ExtResource("56_42qs7")]
 unique_name_in_owner = true
 character = NodePath("../..")
-maxHealth = 100.0
+maxHealth = 350.0
 stateMachine = NodePath("../../StateMachine")
 
 [node name="HitboxComponent" parent="Components" node_paths=PackedStringArray("person", "healthComponent", "collisionShape") groups=["Enemy"] instance=ExtResource("57_fptdq")]
