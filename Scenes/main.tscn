@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://bx5443in28q7d"]
+[gd_scene load_steps=106 format=3 uid="uid://bx5443in28q7d"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_mh3w0"]
 [ext_resource type="Texture2D" uid="uid://cltdwqo4p36c4" path="res://Assets/Backgrounds/background2.png" id="2_05kqs"]
@@ -35,7 +35,9 @@
 [ext_resource type="Texture2D" uid="uid://buyq3l1eeq48" path="res://Assets/Backgrounds/Small Decorations/GreenCrystalShine.png" id="20_an3e5"]
 [ext_resource type="Texture2D" uid="uid://c5ki4lna1ijo5" path="res://Assets/World/mountain enterance1.png" id="20_at78a"]
 [ext_resource type="Texture2D" uid="uid://ddsjvf7ugkr4t" path="res://Assets/World/cave floor1.png" id="20_kc35i"]
+[ext_resource type="PackedScene" uid="uid://bxgkuq1li2mck" path="res://Scenes/blueButterfly.tscn" id="21_e0xk7"]
 [ext_resource type="Texture2D" uid="uid://cb6qil78qmc36" path="res://Assets/Environment/stone1.png" id="21_o20rh"]
+[ext_resource type="PackedScene" uid="uid://bgd05frh0nedk" path="res://Scenes/purpleButterfly.tscn" id="22_sm8ec"]
 [ext_resource type="Texture2D" uid="uid://do0glpin0s1uq" path="res://Assets/World/cloud1.png" id="22_tbnao"]
 [ext_resource type="Script" path="res://Alive/Player/healthUI.gd" id="23_h8g7o"]
 [ext_resource type="Texture2D" uid="uid://dp1o3q7lxirf3" path="res://Assets/World/cloud2.png" id="23_rv6vg"]
@@ -55,6 +57,7 @@
 [ext_resource type="Script" path="res://Scripts/TombstoneArea.gd" id="46_mwung"]
 [ext_resource type="Script" path="res://Components/HitboxComponent/hitboxComponent.gd" id="47_sbpfv"]
 [ext_resource type="PackedScene" uid="uid://c4x5o3x54lrg4" path="res://Combined/Increased Movement/increasedMovementMedallion.tscn" id="51_ncnhr"]
+[ext_resource type="Texture2D" uid="uid://b4wk1ffoh23am" path="res://Assets/Other/red ring.png" id="56_1nem7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t1gh7"]
 
@@ -383,6 +386,140 @@ texture = ExtResource("20_an3e5")
 position = Vector2(2852.29, 3771.2)
 scale = Vector2(0.536601, 0.629382)
 texture = ExtResource("20_an3e5")
+
+[node name="Butterflies" type="Node2D" parent="Backgrounds"]
+
+[node name="Blue Butterfly" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(638.058, 558.602)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly2" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(1606.77, 585.511)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly3" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(1149.32, 289.515)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly4" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(3355.84, 276.061)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly5" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(4001.64, -60.298)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly6" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(7001.96, 316.424)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly7" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(9060.48, 302.969)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly8" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(13608, 329.878)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly9" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(12921.9, -141.024)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly10" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(12052, 68.5128)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly11" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(11302.7, -477.553)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly12" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(12750.4, -947.424)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly13" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(14668, -712.489)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Blue Butterfly14" parent="Backgrounds/Butterflies" instance=ExtResource("21_e0xk7")]
+position = Vector2(15785.5, 246.302)
+scale = Vector2(0.243165, 0.243165)
+
+[node name="Purple Butterfly" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(722.311, 524.11)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly2" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(1802.1, 561.865)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly3" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(2213.63, 267.376)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly4" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(1904.04, 97.479)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly5" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(1031.9, 301.356)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly6" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(3629.44, 3.09161)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly7" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(3757.81, 324.009)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly8" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(4784.75, 225.846)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly9" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(7540.86, 354.213)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly10" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(8886.29, 206.215)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly11" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(11624.2, 319.352)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly12" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(10989.9, -493.147)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly13" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(11103.9, -913.652)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly14" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(12165.9, -1262.88)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly15" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(10262.9, -1063.32)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly16" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(14068.8, -464.639)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly17" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(14688.9, -136.788)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly18" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(14767.3, 290.843)
+scale = Vector2(0.167256, 0.167256)
+
+[node name="Purple Butterfly19" parent="Backgrounds/Butterflies" instance=ExtResource("22_sm8ec")]
+position = Vector2(16028.8, 369.242)
+scale = Vector2(0.167256, 0.167256)
 
 [node name="Projectiles" type="Node" parent="."]
 unique_name_in_owner = true
@@ -2822,8 +2959,12 @@ position = Vector2(7640.49, 3543.82)
 script = ExtResource("46_mwung")
 player = NodePath("../Player")
 
+[node name="RedRing" type="Sprite2D" parent="TombstoneArea"]
+position = Vector2(250.539, 529.81)
+scale = Vector2(4.8582, 4.8582)
+texture = ExtResource("56_1nem7")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TombstoneArea"]
-visible = false
 position = Vector2(258.539, 505.81)
 shape = SubResource("CircleShape2D_u8ekw")
 
